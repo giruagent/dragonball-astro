@@ -98,7 +98,7 @@
     .trans-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 768px) { .trans-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1024px) { .trans-grid { grid-template-columns: repeat(4, 1fr); } }
-    .trans-card { background: linear-gradient(to bottom, rgba(0,0,0,0.5), #0a0a0a); border: 1px solid rgba(245,158,11,0.3); border-radius: 0.75rem; padding: 1.5rem; text-align: center; transition: border-color 0.3s, transform 0.3s; }
+    .trans-card { background: linear-gradient(to bottom, rgba(0,0,0,0.5), #0a0a0a); border: 1px solid rgba(245,158,11,0.3); border-radius: 0.75rem; padding: 1.5rem; text-align: center; transition: border-color 0.3s, transform 0.3s; min-width: 0; overflow-wrap: break-word; word-break: break-word; }
     .trans-card:hover { transform: scale(1.05); }
     .trans-card:nth-child(1):hover { border-color: #facc15; }
     .trans-card:nth-child(2):hover { border-color: #60a5fa; }
@@ -112,6 +112,8 @@
       .hero-sub { font-size: 1.5rem; }
       .section-sub { font-size: 1rem; padding: 0 1rem; }
       .trans-card { padding: 1rem; }
+      .trans-name { font-size: 0.85rem; }
+      .trans-icon { font-size: 2rem; }
       .char-card { padding: 1rem; }
       .char-avatar { width: 6rem; height: 6rem; font-size: 2.5rem; }
       .dragonball { width: 5rem; height: 5rem; font-size: 1.5rem; }
