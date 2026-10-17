@@ -43,7 +43,7 @@
     .dragonball { width: 7rem; height: 7rem; border-radius: 50%; background: linear-gradient(to bottom right, #fcd34d, #f59e0b, #dc2626); box-shadow: 0 0 30px rgba(245,158,11,0.6); position: relative; border: 4px solid rgba(254,215,170,0.5); cursor: pointer; transition: transform 0.3s; animation: float 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite; }
     .dragonball:hover { transform: scale(1.1); }
     .dragonball .stars { position: absolute; inset: 0; }
-    .dragonball .star { position: absolute; font-size: 0.8rem; color: #431407; font-weight: 900; text-shadow: 0 0 3px rgba(255,255,255,0.4); }
+    .dragonball .star { position: absolute; font-size: 0.8rem; color: #dc2626; font-weight: 900; text-shadow: 0 0 3px rgba(255,255,255,0.5); }
     .dragonball-1 .star:nth-child(1) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
     .dragonball-2 .star:nth-child(1) { top: 30%; left: 30%; }
     .dragonball-2 .star:nth-child(2) { top: 70%; left: 70%; }
@@ -115,7 +115,20 @@
     .trans-card:nth-child(3):hover { border-color: #c084fc; }
     .trans-card:nth-child(4):hover { border-color: #f87171; }
     .trans-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
-    .trans-name { font-weight: 900; margin-bottom: 0.25rem; word-break: break-word; }
+    .trans-name { font-weight: 900; margin-bottom: 0.25rem; word-break: break-word; overflow-wrap: anywhere; }
+    @media (max-width: 640px) {
+      .section-title { font-size: 2rem; }
+      .hero-title { font-size: 3rem; }
+      .hero-sub { font-size: 1.5rem; }
+      .section-sub { font-size: 1rem; padding: 0 1rem; }
+      .trans-card { padding: 1rem; }
+      .char-card { padding: 1rem; }
+      .char-avatar { width: 6rem; height: 6rem; font-size: 2.5rem; }
+      .dragonball { width: 5rem; height: 5rem; font-size: 1.5rem; }
+      .dragonball .star { font-size: 0.65rem; }
+      .quiz-options { grid-template-columns: 1fr; }
+      .tech-icon { width: 3.5rem; height: 3.5rem; }
+    }
     .trans-name-yellow { color: #facc15; }
     .trans-name-blue { color: #60a5fa; }
     .trans-name-purple { color: #c084fc; }
