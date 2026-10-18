@@ -317,12 +317,14 @@ button:focus-visible,a:focus-visible,input:focus-visible+span,select:focus-visib
   transform:translateY(-7px) rotate(5deg)
 }
 
-.dragon-sphere span {
-  max-width:76%;
+.dragon-star {
+  position:absolute;
+  left:var(--star-x);
+  top:var(--star-y);
+  transform:translate(-50%,-50%);
   color:#c32b19;
-  font-size:calc(1.55rem - var(--star-count)*.08rem);
+  font-size:1rem;
   line-height:1;
-  letter-spacing:-.2em;
   text-shadow:0 1px 2px #fff4
 }
 
@@ -945,12 +947,12 @@ button:focus-visible,a:focus-visible,input:focus-visible+span,select:focus-visib
   }
 
   .spheres-grid {
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-columns:repeat(3,minmax(0,1fr));
     row-gap:1.4rem
   }
 
   .dragon-sphere {
-    width:min(100%,78px)
+    width:min(100%,108px)
   }
 
   .warriors-section {

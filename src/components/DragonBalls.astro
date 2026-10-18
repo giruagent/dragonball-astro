@@ -1,7 +1,11 @@
+---
+import { starLayouts } from '../scripts/dragonball-layout.js';
+---
+
 <section class="section spheres-section" id="spheres" aria-labelledby="spheres-title">
   <div class="section-heading"><p class="eyebrow">Siete estrellas. Una leyenda.</p><h2 id="spheres-title">Las esferas del Dragón</h2><p>Reúne las siete y convoca al dragón eterno.</p></div>
   <ul class="spheres-grid" aria-label="Las siete esferas del Dragón">
-    {Array.from({ length: 7 }, (_, index) => <li class="sphere-item"><figure><div class="dragon-sphere" style={`--star-count:${index + 1}`} aria-label={`Esfera de ${index + 1} ${index === 0 ? 'estrella' : 'estrellas'}`} role="img"><span aria-hidden="true">{'★'.repeat(index + 1)}</span></div><figcaption>{index + 1} {index === 0 ? 'estrella' : 'estrellas'}</figcaption></figure></li>)}
+    {starLayouts.map((stars, index) => <li class="sphere-item"><figure><div class="dragon-sphere" aria-hidden="true">{stars.map(([x, y]) => <span class="dragon-star" style={`--star-x:${x}%;--star-y:${y}%`}>★</span>)}</div><figcaption>{index + 1} {index === 0 ? 'estrella' : 'estrellas'}</figcaption></figure></li>)}
   </ul>
   <p class="spheres-note"><span aria-hidden="true">✦</span> Cuenta la leyenda que el dragón concede un deseo a quien las encuentre.</p>
 </section>
