@@ -1,0 +1,18 @@
+---
+import { starLayouts } from '../scripts/dragonball-layout.js';
+
+const { number, placement } = Astro.props;
+const stars = starLayouts[number - 1] ?? [];
+---
+
+<button
+  class={`dragon-ball-trigger ${placement}`}
+  type="button"
+  data-dragon-ball={number}
+  aria-label={`Esfera del Dragón oculta ${number} de 7`}
+  aria-pressed="false"
+>
+  <span class="dragon-ball-art" aria-hidden="true">
+    {stars.map(([x, y]) => <span class="dragon-ball-star" style={`--star-x:${x}%;--star-y:${y}%`}>★</span>)}
+  </span>
+</button>

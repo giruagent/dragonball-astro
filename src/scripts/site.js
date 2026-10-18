@@ -1,5 +1,5 @@
 import { scoreAnswers } from './quiz-logic.js';
-import { grantWish } from './wish-logic.js';
+import { collectDragonBall, fulfillWish } from './dragon-quest-logic.js';
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
@@ -43,10 +43,100 @@ quizForm?.addEventListener('submit', (event) => {
   resultElement.textContent = `Tu nivel de poder: ${result.score} / ${result.total}`;
 });
 
+const dragonBallTriggers = [...document.querySelectorAll('[data-dragon-ball]')];
+const dragonBallToast = document.querySelector('#dragon-ball-toast');
+const shenronDialog = document.querySelector('#shenron-scene');
 const wishForm = document.querySelector('#wish-form');
+const wishInput = document.querySelector('#wish-text');
+const wishResult = document.querySelector('#wish-result');
+let foundBalls = [];
+let wishFulfilled = false;
+let toastTimer;
+
+function announceHunt(message) {
+  if (!dragonBallToast) return;
+  window.clearTimeout(toastTimer);
+  dragonBallToast.textContent = '';
+  dragonBallToast.classList.add('is-visible');
+  window.requestAnimationFrame(() => {
+    dragonBallToast.textContent = message;
+  });
+  toastTimer = window.setTimeout(() => {
+    dragonBallToast.classList.remove('is-visible');
+  }, 3600);
+}
+
+function openShenronDialog() {
+  if (!shenronDialog || shenronDialog.open || wishFulfilled) return;
+  shenronDialog.showModal();
+  window.requestAnimationFrame(() => wishInput?.focus({ preventScroll: true }));
+}
+
+document.addEventListener('click', (event) => {
+  const trigger = event.target instanceof Element ? event.target.closest('[data-dragon-ball]') : null;
+  if (!trigger || wishFulfilled) return;
+
+  const result = collectDragonBall(foundBalls, Number(trigger.dataset.dragonBall));
+  foundBalls = result.foundBalls;
+  if (!result.added) {
+    if (result.completed) openShenronDialog();
+    return;
+  }
+
+  trigger.classList.add('is-found');
+  trigger.setAttribute('aria-pressed', 'true');
+  trigger.setAttribute('aria-label', `Esfera del Dragón encontrada: ${result.count} de 7`);
+  announceHunt(`¡Encontraste una esfera! ${result.count} de 7.`);
+
+  if (result.completed) {
+    announceHunt('¡Reuniste las siete! Shenlong está por aparecer...');
+    window.setTimeout(openShenronDialog, 700);
+  }
+});
+
+shenronDialog?.querySelector('[data-close-wish]')?.addEventListener('click', () => {
+  shenronDialog.close();
+});
+
+shenronDialog?.addEventListener('close', () => {
+  if (foundBalls.length === 7 && !wishFulfilled) {
+    announceHunt('Las siete esferas siguen reunidas. Toca una para volver a llamar a Shenlong.');
+  }
+});
+
 wishForm?.addEventListener('submit', (event) => {
   event.preventDefault();
+  if (!wishInput || !wishResult || !shenronDialog) return;
+  wishInput.setCustomValidity('');
   if (!wishForm.reportValidity()) return;
-  const wish = new FormData(wishForm).get('wish');
-  wishForm.querySelector('#wish-result').textContent = grantWish(wish);
+
+  const wish = wishInput.value.trim();
+  if (!wish) {
+    wishInput.setCustomValidity('Escribe un deseo para Shenlong.');
+    wishInput.reportValidity();
+    return;
+  }
+  wishInput.setCustomValidity('');
+
+  const response = fulfillWish(wish);
+  if (!response) return;
+
+  wishResult.textContent = response;
+  wishForm.querySelectorAll('input, button').forEach((control) => {
+    control.disabled = true;
+  });
+  shenronDialog.classList.add('is-fulfilling');
+  wishFulfilled = true;
+  dragonBallTriggers.forEach((trigger) => {
+    trigger.disabled = true;
+    trigger.classList.add('is-launched');
+    trigger.setAttribute('aria-label', 'El deseo se cumplió y las esferas se dispersaron');
+  });
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.setTimeout(() => {
+    if (shenronDialog.open) shenronDialog.close();
+    shenronDialog.classList.remove('is-fulfilling');
+    announceHunt('¡Deseo concedido! Las esferas se han dispersado por el universo.');
+  }, reducedMotion ? 350 : 3100);
 });
