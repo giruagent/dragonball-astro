@@ -1,6 +1,6 @@
 # Dragon Ball Fan Tribute
 
-A static Astro landing page celebrating the Dragon Ball universe. It includes responsive character cards, the seven Dragon Balls, an accessible trivia quiz, and an interactive Shenron wish picker.
+A static Astro landing page celebrating the Dragon Ball universe. It includes responsive character cards, an accessible trivia quiz, and a hidden Dragon Ball hunt: find all seven scattered spheres to summon an animated Shenlong, make a wish, and watch the spheres fly away.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ npm run build
 ```text
 src/
 ├── components/
-│   ├── DragonBalls.astro
+│   ├── DragonBallTrigger.astro
 │   ├── LoreSections.astro
 │   ├── QuizSection.astro
 │   ├── SiteHeader.astro
@@ -36,13 +36,15 @@ src/
 │   └── WishSection.astro
 ├── pages/index.astro
 ├── scripts/
+│   ├── dragon-quest-logic.js
+│   ├── dragonball-layout.js
 │   ├── quiz-logic.js
-│   ├── site.js
-│   └── wish-logic.js
+│   └── site.js
 └── styles/global.css
 test/
-├── quiz-logic.test.js
-└── wish-logic.test.js
+├── dragon-quest-logic.test.js
+├── dragonball-layout.test.js
+└── quiz-logic.test.js
 ```
 
 This is a fan-made, unofficial tribute. Dragon Ball and its characters belong to their respective creators and rights holders.

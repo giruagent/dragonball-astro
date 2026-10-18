@@ -1,6 +1,6 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
-import DragonBalls from '../components/DragonBalls.astro';
+import DragonBallTrigger from '../components/DragonBallTrigger.astro';
 import WarriorCard from '../components/WarriorCard.astro';
 import QuizSection from '../components/QuizSection.astro';
 import WishSection from '../components/WishSection.astro';
@@ -20,7 +20,7 @@ const warriors = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#090b10" />
-    <meta name="description" content="Un tributo hecho por fans a Dragon Ball: sus guerreros, las siete esferas y las aventuras que los unen." />
+    <meta name="description" content="Un tributo hecho por fans a Dragon Ball: sus guerreros, aventuras inolvidables y un universo que nunca deja de sorprender." />
     <title>Dragon Ball — Un tributo de fans</title>
   </head>
   <body>
@@ -32,14 +32,14 @@ const warriors = [
           <p class="eyebrow">Un tributo de fans a la leyenda</p>
           <h1 id="hero-title">La lucha<br />nunca <span>termina.</span></h1>
           <p class="hero-description">Desde una montaña tranquila hasta los confines del universo, toda gran aventura comienza con el valor de superar tus límites.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#warriors">Conoce a los guerreros <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#spheres">Encuentra las esferas</a></div>
+          <div class="hero-actions"><a class="button button-primary" href="#warriors">Conoce a los guerreros <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#sagas">Explora las sagas</a></div>
           <p class="hero-meta">Siete deseos. Un universo inolvidable.</p>
         </div>
+        <DragonBallTrigger number={1} placement="egg-hero" />
       </section>
-      <DragonBalls />
       <section class="section warriors-section" id="warriors" aria-labelledby="warriors-title">
         <div class="section-heading"><p class="eyebrow">La última defensa de la Tierra</p><h2 id="warriors-title">Los guerreros Z</h2><p>Caminos distintos. Un solo equipo. Un universo que vale la pena proteger.</p></div>
-        <div class="warriors-grid">{warriors.map((warrior) => <WarriorCard {...warrior} />)}</div>
+        <div class="warriors-grid">{warriors.map((warrior, index) => <WarriorCard {...warrior} dragonBallNumber={index + 2} />)}</div>
         <p class="note">Descripciones creadas por fans. Las transformaciones y los niveles de poder varían según la saga.</p>
       </section>
       <LoreSections />
@@ -47,6 +47,7 @@ const warriors = [
       <WishSection />
     </main>
     <footer class="site-footer"><strong>DRAGON BALL · TRIBUTO DE FANS</strong><p>Hecho por fans, para fans. Dragon Ball y sus personajes pertenecen a sus respectivos creadores y titulares de derechos.</p><p class="dragonball-footer">Sin afiliación oficial. Sigue entrenando y soñando.</p></footer>
+    <p class="dragon-ball-toast" id="dragon-ball-toast" role="status" aria-live="polite" aria-atomic="true"></p>
     <script>import '../scripts/site.js';</script>
   </body>
 </html>

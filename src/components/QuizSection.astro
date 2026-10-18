@@ -1,3 +1,7 @@
+---
+import DragonBallTrigger from './DragonBallTrigger.astro';
+---
+
 <section class="section quiz-section" id="quiz" aria-labelledby="quiz-title">
   <div class="section-heading"><p class="eyebrow">Pon a prueba tu ki</p><h2 id="quiz-title">¿Eres un verdadero guerrero Z?</h2><p>Responde las cuatro preguntas para descubrir tu puntuación.</p></div>
   <form class="quiz-form" id="quiz-form">
@@ -8,4 +12,5 @@
     <button class="button button-primary quiz-submit" type="submit">Ver mi puntuación <span aria-hidden="true">↗</span></button>
     <p class="quiz-result" id="quiz-result" role="status" aria-live="polite"></p>
   </form>
+  <DragonBallTrigger number={7} placement="egg-quiz" />
 </section>
