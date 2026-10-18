@@ -12,36 +12,57 @@ const orbPaths = [
 ];
 ---
 
-<dialog class="shenron-scene" id="shenron-scene" aria-labelledby="shenron-title" aria-describedby="shenron-instruction">
+<dialog class="shenron-scene" id="shenron-scene" aria-modal="true" aria-labelledby="shenron-title" aria-describedby="shenron-instruction">
   <button class="shenron-close" type="button" data-close-wish aria-label="Cerrar la escena de Shenlong">×</button>
-  <div class="shenron-stage" aria-hidden="true">
-    <div class="shenron-aura"></div>
-    <svg class="shenron-dragon" viewBox="0 0 600 430" role="img" aria-label="Un dragón verde serpentino aparece entre nubes doradas">
+  <div class="shenron-stage">
+    <div class="shenron-aura" aria-hidden="true"></div>
+    <svg class="shenron-dragon" viewBox="0 0 600 430" role="img" aria-label="Shenlong, un dragón verde de cuerpo serpentino, cuernos y largos bigotes dorados">
       <defs>
-        <linearGradient id="shenron-scales" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c1e980"/><stop offset=".38" stop-color="#4dca82"/><stop offset="1" stop-color="#14785c"/></linearGradient>
-        <linearGradient id="shenron-belly" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7e7a3"/><stop offset="1" stop-color="#dca95c"/></linearGradient>
+        <linearGradient id="shenron-scales" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8f29a"/><stop offset=".32" stop-color="#8bd76a"/><stop offset=".68" stop-color="#45b96f"/><stop offset="1" stop-color="#14634f"/></linearGradient>
+        <linearGradient id="shenron-belly" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff0b2"/><stop offset=".5" stop-color="#e4bd70"/><stop offset="1" stop-color="#b77a43"/></linearGradient>
+        <linearGradient id="shenron-horns" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0c1"/><stop offset="1" stop-color="#b98949"/></linearGradient>
+        <pattern id="shenron-scale-pattern" width="20" height="16" patternUnits="userSpaceOnUse"><path d="M0 1 Q10 15 20 1 M-10 9 Q0 23 10 9" fill="none" stroke="#e3f7b7" stroke-width="1.6" opacity=".55"/></pattern>
         <filter id="shenron-glow"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="shenron-eye-glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
       <path class="dragon-body-glow" d="M440 145 C520 105 560 156 526 192 C492 229 426 200 390 225 C349 253 417 295 381 334 C340 381 270 344 263 303 C256 265 310 242 340 272 C365 298 342 328 312 319 C279 309 279 276 301 251 C332 218 380 221 415 241 C456 265 473 302 449 329 C425 357 382 361 353 345" />
-      <path class="dragon-body" d="M440 145 C520 105 560 156 526 192 C492 229 426 200 390 225 C349 253 417 295 381 334 C340 381 270 344 263 303 C256 265 310 242 340 272 C365 298 342 328 312 319 C279 309 279 276 301 251 C332 218 380 221 415 241 C456 265 473 302 449 329 C425 357 382 361 353 345" />
-      <path class="dragon-belly" d="M496 184 C455 207 416 191 390 225 C367 253 405 277 395 302" />
-      <path class="dragon-tail" d="M354 345 Q330 357 306 382 Q339 377 367 350 Z" />
-      <g class="dragon-head">
-        <path class="dragon-horn" d="M447 126 Q425 94 442 68 Q448 106 470 119 M490 121 Q514 91 540 99 Q519 116 515 139" />
-        <path class="dragon-head-shape" d="M421 144 Q430 112 464 110 Q492 109 511 132 L541 120 L526 145 L542 164 L510 158 Q486 179 456 169 Q435 164 421 144 Z" />
-        <path class="dragon-whisker" d="M512 151 Q548 149 574 129 M511 159 Q548 169 566 190" />
-        <path class="dragon-brow" d="M478 133 Q495 123 507 136" />
-        <ellipse class="dragon-eye" cx="494" cy="141" rx="4.5" ry="6" />
-        <path class="dragon-nostril" d="M525 140 l5 -2" />
+      <g class="dragon-coil">
+        <path class="dragon-body-outline" d="M440 145 C520 105 560 156 526 192 C492 229 426 200 390 225 C349 253 417 295 381 334 C340 381 270 344 263 303 C256 265 310 242 340 272 C365 298 342 328 312 319 C279 309 279 276 301 251 C332 218 380 221 415 241 C456 265 473 302 449 329 C425 357 382 361 353 345" />
+        <path class="dragon-body" d="M440 145 C520 105 560 156 526 192 C492 229 426 200 390 225 C349 253 417 295 381 334 C340 381 270 344 263 303 C256 265 310 242 340 272 C365 298 342 328 312 319 C279 309 279 276 301 251 C332 218 380 221 415 241 C456 265 473 302 449 329 C425 357 382 361 353 345" />
+        <path class="dragon-scales" d="M440 145 C520 105 560 156 526 192 C492 229 426 200 390 225 C349 253 417 295 381 334 C340 381 270 344 263 303 C256 265 310 242 340 272 C365 298 342 328 312 319 C279 309 279 276 301 251 C332 218 380 221 415 241 C456 265 473 302 449 329 C425 357 382 361 353 345" />
+        <path class="dragon-belly-outline" d="M496 184 C455 207 416 191 390 225 C367 253 405 277 395 302" />
+        <path class="dragon-belly" d="M496 184 C455 207 416 191 390 225 C367 253 405 277 395 302" />
+        <path class="dragon-belly-seams" d="M482 191 l-5 9 M463 198 l-7 10 M443 202 l-7 10 M423 209 l-7 10 M405 220 l-8 9 M390 235 l-9 8 M382 252 l-9 5 M385 269 l-9 4 M395 285 l-8 5" />
+        <path class="dragon-spines" d="M459 133 l-5 -24 18 17 9 -27 8 25 18 -20 1 26 23 -12 -13 25 25 -3 -22 19 M404 211 l-4 -24 18 18 10 -24 8 25 17 -15 0 23 20 -7 -15 22 21 4 -24 14" />
+        <path class="dragon-tail" d="M354 345 C331 348 314 365 305 385 Q333 376 353 357 Q372 369 390 381 Q382 355 354 345 Z" />
       </g>
-      <path class="dragon-cloud" d="M93 355 Q69 343 83 323 Q94 306 115 318 Q117 294 143 295 Q167 297 167 321 Q189 315 198 335 Q208 358 182 369 H103 Q87 369 93 355 Z M418 365 Q396 353 409 333 Q421 314 441 326 Q444 303 468 304 Q492 306 493 329 Q517 321 526 341 Q537 362 511 374 H431 Q415 375 418 365 Z" />
+      <g class="dragon-head">
+        <path class="dragon-mane" d="M440 139 L417 118 L427 148 L397 153 L426 169 L408 194 L445 178 L462 192 L469 169" />
+        <path class="dragon-horn" d="M447 126 C423 103 421 78 442 53 C441 84 455 101 474 112 M489 116 C509 87 536 82 559 92 C536 107 524 125 519 146 M434 116 Q415 102 413 83 M502 110 Q520 90 526 70" />
+        <path class="dragon-head-shape" d="M417 151 C418 128 439 108 463 106 Q492 101 512 121 L551 107 L535 136 L562 151 L539 162 L552 179 L519 168 Q504 190 479 184 L452 169 Q433 176 417 151 Z" />
+        <path class="dragon-jaw" d="M450 164 Q480 176 511 159 L535 162 Q524 185 500 194 Q472 194 450 164 Z" />
+        <path class="dragon-mouth" d="M494 157 Q516 153 536 161" />
+        <path class="dragon-fang" d="M510 158 l5 13 5 -15 M527 159 l4 10 5 -9" />
+        <path class="dragon-beard" d="M470 183 Q462 202 444 215 Q473 208 488 187 M490 186 Q490 205 477 220 Q500 207 506 185" />
+        <path class="dragon-whisker" d="M526 145 Q559 137 588 113 M529 155 Q566 162 592 188 M519 137 Q546 118 565 118" />
+        <path class="dragon-brow" d="M476 132 Q495 120 511 135" />
+        <ellipse class="dragon-eye-glow" cx="495" cy="140" rx="12" ry="11" />
+        <ellipse class="dragon-eye" cx="495" cy="140" rx="5" ry="7" />
+        <ellipse class="dragon-pupil" cx="497" cy="141" rx="1.8" ry="5.5" />
+        <path class="dragon-nostril" d="M535 143 l6 -2" />
+        <path class="dragon-cheek-scales" d="M447 146 l8 3 M451 154 l8 3 M456 162 l7 2" />
+      </g>
+      <g class="dragon-clouds">
+        <path class="dragon-cloud dragon-cloud-left" d="M93 355 Q69 343 83 323 Q94 306 115 318 Q117 294 143 295 Q167 297 167 321 Q189 315 198 335 Q208 358 182 369 H103 Q87 369 93 355 Z" />
+        <path class="dragon-cloud dragon-cloud-right" d="M418 365 Q396 353 409 333 Q421 314 441 326 Q444 303 468 304 Q492 306 493 329 Q517 321 526 341 Q537 362 511 374 H431 Q415 375 418 365 Z" />
+      </g>
     </svg>
-    <div class="wish-orbs">
+    <div class="wish-orbs" aria-hidden="true">
       {orbPaths.map((orb, index) => <span class={`wish-orb wish-orb-${index + 1}`} style={`--orb-x:${orb.x}%;--orb-y:${orb.y}%;--fly-x:${orb.flyX}vw;--fly-y:${orb.flyY}vh;--orb-delay:${index * 90}ms;--launch-delay:${index * 65}ms`}>
         {starLayouts[index].map(([x, y]) => <span class="wish-orb-star" style={`--star-x:${x}%;--star-y:${y}%`}>★</span>)}
       </span>)}
     </div>
-    <div class="shenron-lightning"></div>
+    <div class="shenron-lightning" aria-hidden="true"></div>
   </div>
   <div class="shenron-copy">
     <p class="eyebrow">Las siete esferas están reunidas</p>
