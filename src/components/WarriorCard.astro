@@ -1,0 +1,7 @@
+---
+const { name, title, description, color, symbol, techniques } = Astro.props;
+---
+<article class="warrior-card" style={`--warrior-color:${color}`}>
+  <div class="warrior-art" aria-hidden="true"><span class="warrior-aura"></span><span class="warrior-symbol">{symbol}</span></div>
+  <div class="warrior-copy"><p class="eyebrow">{title}</p><h3>{name}</h3><p>{description}</p><ul class="technique-list" aria-label={`${name}: técnicas características`}>{techniques.map((technique) => <li>{technique}</li>)}</ul></div>
+</article>

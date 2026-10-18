@@ -1,214 +1,52 @@
 ---
-// Dragon Ball themed landing page
----
+import SiteHeader from '../components/SiteHeader.astro';
+import DragonBalls from '../components/DragonBalls.astro';
+import WarriorCard from '../components/WarriorCard.astro';
+import QuizSection from '../components/QuizSection.astro';
+import WishSection from '../components/WishSection.astro';
+import LoreSections from '../components/LoreSections.astro';
+import '../styles/global.css';
 
+const warriors = [
+  { name: 'Goku', title: 'El Saiyan que nunca se rinde', description: 'Saiyan criado en la Tierra. Corazón puro, apetito infinito y pasión por un buen combate.', color: '#ff9f1c', symbol: '悟', techniques: ['Kamehameha', 'Teletransportación'] },
+  { name: 'Vegeta', title: 'Príncipe de todos los Saiyan', description: 'Orgulloso, incansable y siempre en busca del siguiente nivel. Su rivalidad los hace más fuertes.', color: '#71a9ff', symbol: '王', techniques: ['Final Flash', 'Galick Gun'] },
+  { name: 'Gohan', title: 'Un estudioso con poder oculto', description: 'Un alma bondadosa cuya fuerza despierta cuando sus seres queridos están en peligro.', color: '#78dc8d', symbol: '飯', techniques: ['Masenko', 'Bestia'] },
+  { name: 'Piccolo', title: 'El sabio namekiano', description: 'Estratega, mentor y guerrero cuya disciplina mantiene unido al equipo.', color: '#49c8a0', symbol: '魔', techniques: ['Makankosappo', 'Orange'] },
+];
+---
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dragon Ball Z Universe</title>
-  <style is:inline>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0a0a0a; color: #fff; font-family: 'Segoe UI', system-ui, sans-serif; overflow-x: hidden; }
-    html { scroll-behavior: smooth; }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #1a1a2e; }
-    ::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 4px; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-    .section { padding: 6rem 0; }
-    .section-title { font-size: 3rem; font-weight: 900; text-align: center; margin-bottom: 1rem; letter-spacing: -0.02em; }
-    .section-sub { text-align: center; color: rgba(254,215,170,0.7); margin-bottom: 4rem; font-size: 1.125rem; }
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(245,158,11,0.3); }
-    .navbar-inner { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between; }
-    .navbar-logo { font-size: 1.5rem; font-weight: 900; color: #f59e0b; }
-    .navbar-links { display: none; gap: 2rem; }
-    @media (min-width: 768px) { .navbar-links { display: flex; } }
-    .navbar-links a { color: #fed7aa; text-decoration: none; font-weight: 600; font-size: 0.875rem; transition: color 0.2s; }
-    .navbar-links a:hover { color: #f59e0b; }
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920') center/cover; opacity: 0.15; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(124,45,18,0.3), transparent, #0a0a0a); }
-    .hero-content { position: relative; z-index: 10; text-align: center; padding: 0 1rem; }
-    .hero-badge { display: inline-block; margin-bottom: 1.5rem; padding: 0.5rem 1.5rem; border: 1px solid rgba(245,158,11,0.5); border-radius: 9999px; color: #fdba74; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; }
-    .hero-title { font-size: 4.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.5rem; background: linear-gradient(to bottom, #fcd34d, #f59e0b, #dc2626); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero-sub { font-size: 2.5rem; font-weight: 700; color: #fed7aa; letter-spacing: 0.3em; margin-bottom: 1.5rem; }
-    .hero-desc { font-size: 1.25rem; color: rgba(254,215,170,0.8); max-width: 42rem; margin: 0 auto 2.5rem; }
-    .btn-primary { display: inline-block; padding: 1rem 2rem; background: linear-gradient(to right, #f97316, #dc2626); color: #fff; font-weight: 700; border-radius: 9999px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 10px 25px rgba(249,115,22,0.4); }
-    .btn-primary:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(249,115,22,0.6); }
-    .btn-secondary { display: inline-block; padding: 1rem 2rem; border: 2px solid #f59e0b; color: #fdba74; font-weight: 700; border-radius: 9999px; text-decoration: none; transition: background 0.2s; }
-    .btn-secondary:hover { background: rgba(245,158,11,0.1); }
-    .hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-    .dragonballs-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-    .dragonball { width: 7rem; height: 7rem; border-radius: 50%; background: linear-gradient(to bottom right, #fcd34d, #f59e0b, #dc2626); box-shadow: 0 0 30px rgba(245,158,11,0.6); position: relative; border: 4px solid rgba(254,215,170,0.5); cursor: pointer; transition: transform 0.3s; animation: float 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite; }
-    .dragonball:hover { transform: scale(1.1); }
-    .dragonball .stars { position: absolute; inset: 0; }
-    .dragonball .star { position: absolute; font-size: 0.8rem; color: #dc2626; font-weight: 900; text-shadow: 0 0 3px rgba(255,255,255,0.5); }
-    .dragonball-1 .star:nth-child(1) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    .dragonball-2 .star:nth-child(1) { top: 30%; left: 30%; }
-    .dragonball-2 .star:nth-child(2) { top: 70%; left: 70%; }
-    .dragonball-3 .star:nth-child(1) { top: 25%; left: 50%; transform: translateX(-50%); }
-    .dragonball-3 .star:nth-child(2) { top: 70%; left: 28%; }
-    .dragonball-3 .star:nth-child(3) { top: 70%; left: 72%; }
-    .dragonball-4 .star:nth-child(1) { top: 18%; left: 50%; transform: translateX(-50%); }
-    .dragonball-4 .star:nth-child(2) { top: 50%; left: 18%; }
-    .dragonball-4 .star:nth-child(3) { top: 50%; left: 82%; }
-    .dragonball-4 .star:nth-child(4) { top: 82%; left: 50%; transform: translateX(-50%); }
-    .dragonball-5 .star:nth-child(1) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    .dragonball-5 .star:nth-child(2) { top: 18%; left: 18%; }
-    .dragonball-5 .star:nth-child(3) { top: 18%; left: 82%; }
-    .dragonball-5 .star:nth-child(4) { top: 82%; left: 18%; }
-    .dragonball-5 .star:nth-child(5) { top: 82%; left: 82%; }
-    .dragonball-6 .star:nth-child(1) { top: 15%; left: 50%; transform: translateX(-50%); }
-    .dragonball-6 .star:nth-child(2) { top: 32%; left: 18%; }
-    .dragonball-6 .star:nth-child(3) { top: 32%; left: 82%; }
-    .dragonball-6 .star:nth-child(4) { top: 68%; left: 18%; }
-    .dragonball-6 .star:nth-child(5) { top: 68%; left: 82%; }
-    .dragonball-6 .star:nth-child(6) { top: 85%; left: 50%; transform: translateX(-50%); }
-    .dragonball-7 .star:nth-child(1) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    .dragonball-7 .star:nth-child(2) { top: 15%; left: 50%; transform: translateX(-50%); }
-    .dragonball-7 .star:nth-child(3) { top: 32%; left: 18%; }
-    .dragonball-7 .star:nth-child(4) { top: 32%; left: 82%; }
-    .dragonball-7 .star:nth-child(5) { top: 68%; left: 18%; }
-    .dragonball-7 .star:nth-child(6) { top: 68%; left: 82%; }
-    .dragonball-7 .star:nth-child(7) { top: 85%; left: 50%; transform: translateX(-50%); }
-    .dragonball-label { text-align: center; margin-top: 0.75rem; color: #fdba74; font-weight: 600; font-size: 0.875rem; }
-    .dragonball-wrapper { text-align: center; }
-    .quote-box { max-width: 42rem; margin: 4rem auto 0; padding: 2rem; border-radius: 1rem; background: linear-gradient(to bottom right, rgba(124,45,18,0.4), rgba(69,20,7,0.4)); border: 1px solid rgba(245,158,11,0.3); }
-    .quote-box p { font-size: 1.25rem; color: #fed7aa; font-style: italic; }
-    .characters-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    @media (min-width: 768px) { .characters-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .characters-grid { grid-template-columns: repeat(4, 1fr); } }
-    .char-card { background: linear-gradient(to bottom, rgba(124,45,18,0.4), #0a0a0a); border: 1px solid rgba(245,158,11,0.3); border-radius: 1rem; padding: 1.5rem; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-    .char-card:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(245,158,11,0.2); }
-    .char-avatar { width: 8rem; height: 8rem; margin: 0 auto 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
-    .char-avatar-goku { background: linear-gradient(to bottom right, #fb923c, #fde047); }
-    .char-avatar-vegeta { background: linear-gradient(to bottom right, #60a5fa, #a5b4fc); }
-    .char-avatar-gohan { background: linear-gradient(to bottom right, #4ade80, #6ee7b7); }
-    .char-avatar-piccolo { background: linear-gradient(to bottom right, #10b981, #99f6e4); }
-    .char-name { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; }
-    .char-name-goku { color: #fb923c; }
-    .char-name-vegeta { color: #60a5fa; }
-    .char-name-gohan { color: #4ade80; }
-    .char-name-piccolo { color: #34d399; }
-    .char-desc { color: rgba(254,215,170,0.8); font-size: 0.875rem; margin-bottom: 1rem; }
-    .power-bar { width: 100%; height: 0.5rem; background: rgba(0,0,0,0.5); border-radius: 9999px; overflow: hidden; margin-bottom: 0.5rem; }
-    .power-fill { height: 100%; border-radius: 9999px; }
-    .power-fill-goku { background: linear-gradient(to right, #ea580c, #fbbf24); width: 95%; }
-    .power-fill-vegeta { background: linear-gradient(to right, #2563eb, #818cf8); width: 88%; }
-    .power-fill-gohan { background: linear-gradient(to right, #16a34a, #6ee7b7); width: 80%; }
-    .power-fill-piccolo { background: linear-gradient(to right, #0d9488, #5eead4); width: 70%; }
-    .power-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: #fdba74; margin-bottom: 0.25rem; }
-    .char-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 0.75rem; }
-    .tag { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
-    .tag-orange { background: rgba(249,115,22,0.2); color: #fdba74; }
-    .tag-blue { background: rgba(59,130,246,0.2); color: #93c5fd; }
-    .tag-green { background: rgba(34,197,94,0.2); color: #86efac; }
-    .tag-yellow { background: rgba(234,179,8,0.2); color: #fde047; }
-    .trans-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-    @media (min-width: 768px) { .trans-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .trans-grid { grid-template-columns: repeat(4, 1fr); } }
-    .trans-card { background: linear-gradient(to bottom, rgba(0,0,0,0.5), #0a0a0a); border: 1px solid rgba(245,158,11,0.3); border-radius: 0.75rem; padding: 1.5rem; text-align: center; transition: border-color 0.3s, transform 0.3s; min-width: 0; overflow-wrap: break-word; word-break: break-word; }
-    .trans-card:hover { transform: scale(1.05); }
-    .trans-card:nth-child(1):hover { border-color: #facc15; }
-    .trans-card:nth-child(2):hover { border-color: #60a5fa; }
-    .trans-card:nth-child(3):hover { border-color: #c084fc; }
-    .trans-card:nth-child(4):hover { border-color: #f87171; }
-    .trans-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
-    .trans-name { font-weight: 900; margin-bottom: 0.25rem; word-break: break-word; overflow-wrap: anywhere; }
-    @media (max-width: 640px) {
-      .section-title { font-size: 2rem; }
-      .hero-title { font-size: 3rem; }
-      .hero-sub { font-size: 1.5rem; }
-      .section-sub { font-size: 1rem; padding: 0 1rem; }
-      .trans-card { padding: 1rem; }
-      .trans-name { font-size: 0.85rem; }
-      .trans-icon { font-size: 2rem; }
-      .char-card { padding: 1rem; }
-      .char-avatar { width: 6rem; height: 6rem; font-size: 2.5rem; }
-      .dragonball { width: 5rem; height: 5rem; font-size: 1.5rem; }
-      .dragonball .star { font-size: 0.65rem; }
-      .quiz-options { grid-template-columns: 1fr; }
-      .tech-icon { width: 3.5rem; height: 3.5rem; }
-    }
-    .trans-name-yellow { color: #facc15; }
-    .trans-name-blue { color: #60a5fa; }
-    .trans-name-purple { color: #c084fc; }
-    .trans-name-red { color: #f87171; }
-    .trans-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
-    .trans-power { font-size: 0.875rem; color: rgba(254,240,138,0.7); }
-    .power-compare { max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
-    .power-row { padding: 1.5rem; border-radius: 1rem; background: linear-gradient(to right, rgba(124,45,18,0.4), #0a0a0a); border: 1px solid rgba(245,158,11,0.3); }
-    .power-row-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
-    .power-row-name { font-weight: 900; font-size: 1.25rem; }
-    .power-row-value { font-weight: 700; color: #fdba74; }
-    .power-row-bar { width: 100%; height: 1rem; background: rgba(0,0,0,0.6); border-radius: 9999px; overflow: hidden; }
-    .power-row-fill { height: 100%; border-radius: 9999px; }
-    .fill-goku { background: linear-gradient(to right, #ea580c, #fbbf24); width: 100%; }
-    .fill-vegeta { background: linear-gradient(to right, #2563eb, #818cf8); width: 93%; }
-    .fill-jiren { background: linear-gradient(to right, #7c3aed, #f0abfc); width: 90%; }
-    .fill-gohan { background: linear-gradient(to right, #16a34a, #6ee7b7); width: 80%; }
-    .fill-frieza { background: linear-gradient(to right, #dc2626, #fdba74); width: 70%; }
-    .fill-piccolo { background: linear-gradient(to right, #0891b2, #5eead4); width: 65%; }
-    .tech-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-    @media (min-width: 768px) { .tech-grid { grid-template-columns: repeat(3, 1fr); } }
-    .tech-card { position: relative; overflow: hidden; border-radius: 1rem; background: linear-gradient(to bottom, rgba(30,58,138,0.4), #0a0a0a); border: 1px solid rgba(59,130,246,0.3); padding: 2rem; text-align: center; transition: transform 0.3s, border-color 0.3s; }
-    .tech-card:hover { transform: scale(1.05); border-color: #60a5fa; }
-    .tech-icon { width: 5rem; height: 5rem; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(to bottom right, #60a5fa, #67e8f9); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; box-shadow: 0 0 20px rgba(59,130,246,0.4); }
-    .tech-name { font-weight: 900; color: #60a5fa; font-size: 1.25rem; margin-bottom: 0.5rem; }
-    .tech-desc { color: rgba(191,219,254,0.7); font-size: 0.875rem; margin-bottom: 1rem; }
-    .tech-users { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(59,130,246,0.2); color: #93c5fd; border-radius: 9999px; font-size: 0.75rem; }
-    .quiz-container { max-width: 48rem; margin: 0 auto; }
-    .quiz-question { padding: 2rem; border-radius: 1rem; margin-bottom: 2rem; border: 1px solid rgba(245,158,11,0.3); background: linear-gradient(to right, rgba(124,45,18,0.4), #0a0a0a); }
-    .quiz-qtitle { font-weight: 700; font-size: 1.125rem; margin-bottom: 1rem; color: #fdba74; }
-    .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-    .quiz-btn { padding: 0.75rem 1rem; border-radius: 0.75rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(245,158,11,0.3); color: #fed7aa; cursor: pointer; transition: background 0.2s; font-size: 0.875rem; }
-    .quiz-btn:hover { background: rgba(245,158,11,0.2); }
-    .quiz-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .quiz-btn.correct { background: rgba(34,197,94,0.3); border-color: #4ade80; }
-    .quiz-btn.incorrect { background: rgba(239,68,68,0.3); border-color: #f87171; }
-    .quiz-submit { display: block; margin: 2rem auto 0; padding: 1rem 2rem; background: linear-gradient(to right, #f97316, #dc2626); color: #fff; font-weight: 700; border-radius: 9999px; border: none; cursor: pointer; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
-    .quiz-submit:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(249,115,22,0.4); }
-    .quiz-result { text-align: center; margin-top: 1rem; font-size: 1.5rem; font-weight: 900; color: #f59e0b; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    @media (min-width: 768px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
-    .gallery-item { position: relative; overflow: hidden; border-radius: 1rem; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.3s; background: linear-gradient(to bottom right, rgba(124,45,18,0.4), #0a0a0a); border: 1px solid rgba(245,158,11,0.3); }
-    .gallery-item:hover { transform: scale(1.05); }
-    .gallery-icon { font-size: 4rem; transition: transform 0.3s; }
-    .gallery-item:hover .gallery-icon { transform: scale(1.25); }
-    .footer { padding: 3rem 1rem; border-top: 1px solid rgba(245,158,11,0.2); background: rgba(0,0,0,0.5); text-align: center; }
-    .footer-title { color: #f59e0b; font-weight: 900; font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .footer-text { color: rgba(254,215,170,0.5); font-size: 0.875rem; }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .animate-float { animation: float 3s ease-in-out infinite; }
-  </style>
-</head>
-<body>
-  <nav class="navbar"><div class="navbar-inner"><span class="navbar-logo">DBZ</span><div class="navbar-links"><a href="#hero">Inicio</a><a href="#dragonballs">Esferas</a><a href="#characters">Guerreros</a><a href="#transformations">Transformaciones</a></div></div></nav>
-  <section id="hero" class="hero"><div class="hero-bg"></div><div class="hero-overlay"></div><div class="hero-content"><div class="hero-badge">Fan Tribute</div><h1 class="hero-title">DRAGON BALL</h1><div class="hero-sub">Z</div><p class="hero-desc">El universo necesita guerreros. Las esferas del dragón esperan ser reunidas. ¿Estás listo para superar tus límites?</p><div class="hero-buttons"><a href="#characters" class="btn-primary">VER GUERREROS</a><a href="#dragonballs" class="btn-secondary">ESFERAS DEL DRAGÓN</a></div></div></section>
-  <section id="dragonballs" class="section"><div class="container"><h2 class="section-title" style="color: #f59e0b;">LAS 7 ESFERAS</h2><p class="section-sub">Reúnelas todas y invoca a Shenron</p><div class="dragonballs-grid"><div class="dragonball-wrapper"><div class="dragonball dragonball-1 animate-float"><div class="stars"><span class="star">★</span></div></div><div class="dragonball-label">1 Estrella</div></div><div class="dragonball-wrapper"><div class="dragonball dragonball-2 animate-float" style="animation-delay: 0.2s"><div class="stars"><span class="star">★</span><span class="star">★</span></div></div><div class="dragonball-label">2 Estrellas</div></div><div class="dragonball-wrapper"><div class="dragonball dragonball-3 animate-float" style="animation-delay: 0.4s"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div><div class="dragonball-label">3 Estrellas</div></div><div class="dragonball-wrapper"><div class="dragonball dragonball-4 animate-float" style="animation-delay: 0.6s"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div><div class="dragonball-label">4 Estrellas</div></div><div class="dragonball-wrapper"><div class="dragonball dragonball-5 animate-float" style="animation-delay: 0.8s"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div><div class="dragonball-label">5 Estrellas</div></div><div class="dragonball-wrapper"><div class="dragonball dragonball-6 animate-float" style="animation-delay: 1s"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div><div class="dragonball-label">6 Estrellas</div></div><div class="dragonball-wrapper"><div class="dragonball dragonball-7 animate-float" style="animation-delay: 1.2s"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div><div class="dragonball-label">7 Estrellas</div></div></div><div class="quote-box"><p>"Cuando se reúnen las siete esferas de dragón, el dragón sagrado Shenron aparecerá y concederá un deseo..."</p></div></div></section>
-  <section id="characters" class="section" style="background: linear-gradient(to bottom, transparent, rgba(124,45,18,0.1), transparent);"><div class="container"><h2 class="section-title" style="color: #f59e0b;">GUERREROS Z</h2><p class="section-sub">Los luchadores más poderosos del universo</p><div class="characters-grid"><div class="char-card"><div class="char-avatar char-avatar-goku">🐉</div><h3 class="char-name char-name-goku">GOKU</h3><p class="char-desc">Saiyan criado en la Tierra. El guerrero más fuerte del Universo 7.</p><div class="power-label"><span>Poder</span><span>150M+</span></div><div class="power-bar"><div class="power-fill power-fill-goku"></div></div><div class="char-tags"><span class="tag tag-orange">Ultra Instinct</span><span class="tag tag-blue">Kamehameha</span></div></div><div class="char-card"><div class="char-avatar char-avatar-vegeta">👑</div><h3 class="char-name char-name-vegeta">VEGETA</h3><p class="char-desc">Príncipe de los Saiyans. Orgullo y poder ilimitado.</p><div class="power-label"><span>Poder</span><span>130M+</span></div><div class="power-bar"><div class="power-fill power-fill-vegeta"></div></div><div class="char-tags"><span class="tag tag-blue">Galick Gun</span><span class="tag tag-orange">Final Flash</span></div></div><div class="char-card"><div class="char-avatar char-avatar-gohan">📚</div><h3 class="char-name char-name-gohan">GOHAN</h3><p class="char-desc">Hijo de Goku. El guerrero con mayor potencial oculto.</p><div class="power-label"><span>Poder</span><span>100M+</span></div><div class="power-bar"><div class="power-fill power-fill-gohan"></div></div><div class="char-tags"><span class="tag tag-green">Masenko</span><span class="tag tag-yellow">Beast Mode</span></div></div><div class="char-card"><div class="char-avatar char-avatar-piccolo">🧘</div><h3 class="char-name char-name-piccolo">PICCOLO</h3><p class="char-desc">Guerrero Namekiano. La sabiduría del Rey Piccolo.</p><div class="power-label"><span>Poder</span><span>80M+</span></div><div class="power-bar"><div class="power-fill power-fill-piccolo"></div></div><div class="char-tags"><span class="tag tag-green">Special Beam</span><span class="tag tag-orange">Fusion</span></div></div></div></div></section>
-  <section id="transformations" class="section"><div class="container"><h2 class="section-title" style="color: #f59e0b;">TRANSFORMACIONES</h2><p class="section-sub">Desata el poder oculto del Saiyan</p><div class="trans-grid"><div class="trans-card"><div class="trans-icon">⭐</div><div class="trans-name trans-name-yellow">SUPER SAIYAN</div><div class="trans-power">x50</div></div><div class="trans-card"><div class="trans-icon">💎</div><div class="trans-name trans-name-blue">SUPER SAIYAN BLUE</div><div class="trans-power">x20,000</div></div><div class="trans-card"><div class="trans-icon">🌟</div><div class="trans-name trans-name-purple">ULTRA INSTINCTO</div><div class="trans-power">∞</div></div><div class="trans-card"><div class="trans-icon">🔥</div><div class="trans-name trans-name-red">SUPER SAIYAN GOD</div><div class="trans-power">x500</div></div></div></div></section>
-  <section class="section"><div class="container"><h2 class="section-title" style="color: #f59e0b;">PODER VS PODER</h2><p class="section-sub">Comparación de niveles de pelea</p><div class="power-compare"><div class="power-row"><div class="power-row-header"><span class="power-row-name" style="color: #fb923c;">GOKU (Ultra Instinct)</span><span class="power-row-value">150M+</span></div><div class="power-row-bar"><div class="power-row-fill fill-goku"></div></div></div><div class="power-row"><div class="power-row-header"><span class="power-row-name" style="color: #60a5fa;">VEGETA (Blue Evolution)</span><span class="power-row-value">140M+</span></div><div class="power-row-bar"><div class="power-row-fill fill-vegeta"></div></div></div><div class="power-row"><div class="power-row-header"><span class="power-row-name" style="color: #c084fc;">JIREN</span><span class="power-row-value">135M+</span></div><div class="power-row-bar"><div class="power-row-fill fill-jiren"></div></div></div><div class="power-row"><div class="power-row-header"><span class="power-row-name" style="color: #4ade80;">GOHAN (Beast)</span><span class="power-row-value">100M+</span></div><div class="power-row-bar"><div class="power-row-fill fill-gohan"></div></div></div><div class="power-row"><div class="power-row-header"><span class="power-row-name" style="color: #f87171;">FREEZER (Golden)</span><span class="power-row-value">85M+</span></div><div class="power-row-bar"><div class="power-row-fill fill-frieza"></div></div></div><div class="power-row"><div class="power-row-header"><span class="power-row-name" style="color: #22d3ee;">PICCOLO (Orange)</span><span class="power-row-value">75M+</span></div><div class="power-row-bar"><div class="power-row-fill fill-piccolo"></div></div></div></div></div></section>
-  <section class="section" style="background: linear-gradient(to bottom, transparent, rgba(30,58,138,0.1), transparent);"><div class="container"><h2 class="section-title" style="color: #f59e0b;">TÉCNICAS ICÓNICAS</h2><p class="section-sub">Los ataques más legendarios del universo</p><div class="tech-grid"><div class="tech-card"><div class="tech-icon">🌊</div><div class="tech-name">KAMEHAMEHA</div><div class="tech-desc">La ola de energía legendaria de la Escuela Tortuga</div><div class="tech-users">Goku • Gohan • Krillin</div></div><div class="tech-card"><div class="tech-icon">💥</div><div class="tech-name">FINAL FLASH</div><div class="tech-desc">La técnica definitiva del Príncipe Vegeta</div><div class="tech-users">Vegeta</div></div><div class="tech-card"><div class="tech-icon">⚡</div><div class="tech-name">SPIRIT BOMB</div><div class="tech-desc">La energía de todo el universo en una esfera</div><div class="tech-users">Goku</div></div><div class="tech-card"><div class="tech-icon">🔥</div><div class="tech-name">BIG BANG ATTACK</div><div class="tech-desc">El ataque de energía concentrada de Vegeta</div><div class="tech-users">Vegeta</div></div><div class="tech-card"><div class="tech-icon">💫</div><div class="tech-name">SPECIAL BEAM CANNON</div><div class="tech-desc">El rayo perforante de Piccolo</div><div class="tech-users">Piccolo</div></div><div class="tech-card"><div class="tech-icon">🌿</div><div class="tech-name">MASENKO</div><div class="tech-desc">El rayo de energía de Gohan</div><div class="tech-users">Gohan</div></div></div></div></section>
-  <section class="section"><div class="container"><h2 class="section-title" style="color: #f59e0b;">¿CUÁNTO SABES?</h2><p class="section-sub">Pon a prueba tu conocimiento de Dragon Ball</p><div class="quiz-container"><div class="quiz-question"><div class="quiz-qtitle">1. ¿Cuántas esferas del dragón existen?</div><div class="quiz-options"><button class="quiz-btn" data-correct="true">A) 7 esferas</button><button class="quiz-btn">B) 5 esferas</button><button class="quiz-btn">C) 10 esferas</button><button class="quiz-btn">D) 3 esferas</button></div></div><div class="quiz-question"><div class="quiz-qtitle">2. ¿Quién es el príncipe de los Saiyans?</div><div class="quiz-options"><button class="quiz-btn">A) Goku</button><button class="quiz-btn">B) Gohan</button><button class="quiz-btn" data-correct="true">C) Vegeta</button><button class="quiz-btn">D) Piccolo</button></div></div><div class="quiz-question"><div class="quiz-qtitle">3. ¿Cómo se llama la técnica más icónica de Goku?</div><div class="quiz-options"><button class="quiz-btn">A) Final Flash</button><button class="quiz-btn" data-correct="true">B) Kamehameha</button><button class="quiz-btn">C) Galick Gun</button><button class="quiz-btn">D) Spirit Bomb</button></div></div><button class="quiz-submit" id="quiz-submit">VER RESULTADO</button><div class="quiz-result" id="quiz-result"></div></div></div></section>
-  <section class="section" style="background: linear-gradient(to bottom, transparent, rgba(124,45,18,0.1), transparent);"><div class="container"><h2 class="section-title" style="color: #f59e0b;">GALERÍA</h2><p class="section-sub">Momentos legendarios del universo Dragon Ball</p><div class="gallery-grid"><div class="gallery-item"><div class="gallery-icon">🐉</div></div><div class="gallery-item"><div class="gallery-icon">⚡</div></div><div class="gallery-item"><div class="gallery-icon">⭐</div></div><div class="gallery-item"><div class="gallery-icon">🔥</div></div><div class="gallery-item"><div class="gallery-icon">💎</div></div><div class="gallery-item"><div class="gallery-icon">🧘</div></div></div></div></section>
-  <footer class="footer"><div class="footer-title">DRAGON BALL</div><div class="footer-text">Fan tribute &copy; 2026 — CSS inline sin dependencias</div></footer>
-  <script>
-    var score = 0;
-    var buttons = document.querySelectorAll('.quiz-btn');
-    buttons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var parent = btn.closest('.quiz-question');
-        if (btn.dataset.correct === 'true') { btn.classList.add('correct'); score++; }
-        else { btn.classList.add('incorrect'); parent.querySelectorAll('.quiz-btn').forEach(function(b) { if (b.dataset.correct === 'true') b.classList.add('correct'); }); }
-        parent.querySelectorAll('.quiz-btn').forEach(function(b) { b.disabled = true; });
-      });
-    });
-    document.getElementById('quiz-submit').addEventListener('click', function() {
-      var total = document.querySelectorAll('.quiz-btn[data-correct="true"]').length;
-      document.getElementById('quiz-result').textContent = 'Tu puntaje: ' + score + '/' + total;
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b10" />
+    <meta name="description" content="Un tributo hecho por fans a Dragon Ball: sus guerreros, las siete esferas y las aventuras que los unen." />
+    <title>Dragon Ball — Un tributo de fans</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <SiteHeader />
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Un tributo de fans a la leyenda</p>
+          <h1 id="hero-title">La lucha<br />nunca <span>termina.</span></h1>
+          <p class="hero-description">Desde una montaña tranquila hasta los confines del universo, toda gran aventura comienza con el valor de superar tus límites.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#warriors">Conoce a los guerreros <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#spheres">Encuentra las esferas</a></div>
+          <p class="hero-meta">Siete deseos. Un universo inolvidable.</p>
+        </div>
+      </section>
+      <DragonBalls />
+      <section class="section warriors-section" id="warriors" aria-labelledby="warriors-title">
+        <div class="section-heading"><p class="eyebrow">La última defensa de la Tierra</p><h2 id="warriors-title">Los guerreros Z</h2><p>Caminos distintos. Un solo equipo. Un universo que vale la pena proteger.</p></div>
+        <div class="warriors-grid">{warriors.map((warrior) => <WarriorCard {...warrior} />)}</div>
+        <p class="note">Descripciones creadas por fans. Las transformaciones y los niveles de poder varían según la saga.</p>
+      </section>
+      <LoreSections />
+      <QuizSection />
+      <WishSection />
+    </main>
+    <footer class="site-footer"><strong>DRAGON BALL · TRIBUTO DE FANS</strong><p>Hecho por fans, para fans. Dragon Ball y sus personajes pertenecen a sus respectivos creadores y titulares de derechos.</p><p class="dragonball-footer">Sin afiliación oficial. Sigue entrenando y soñando.</p></footer>
+    <script>import '../scripts/site.js';</script>
+  </body>
 </html>
