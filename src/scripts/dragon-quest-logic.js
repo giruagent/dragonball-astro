@@ -29,3 +29,8 @@ export function fulfillWish(wish) {
 
   return `Shenlong escucha: «${normalizedWish}». ¡Tu deseo se cumple! Las esferas salen disparadas...`;
 }
+
+export function getShenronMenuAction(foundBalls, wishFulfilled = false) {
+  if (wishFulfilled) return 'fulfilled';
+  return collectDragonBall(foundBalls, null).completed ? 'open' : 'find';
+}

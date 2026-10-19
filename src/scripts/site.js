@@ -1,5 +1,5 @@
 import { scoreAnswers } from './quiz-logic.js';
-import { collectDragonBall, fulfillWish } from './dragon-quest-logic.js';
+import { collectDragonBall, fulfillWish, getShenronMenuAction } from './dragon-quest-logic.js';
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
@@ -46,6 +46,7 @@ quizForm?.addEventListener('submit', (event) => {
 const dragonBallTriggers = [...document.querySelectorAll('[data-dragon-ball]')];
 const dragonBallToast = document.querySelector('#dragon-ball-toast');
 const shenronDialog = document.querySelector('#shenron-scene');
+const shenronEntry = document.querySelector('[data-shenron-entry]');
 const wishForm = document.querySelector('#wish-form');
 const wishInput = document.querySelector('#wish-text');
 const wishResult = document.querySelector('#wish-result');
@@ -58,9 +59,9 @@ function announceHunt(message) {
   window.clearTimeout(toastTimer);
   dragonBallToast.textContent = '';
   dragonBallToast.classList.add('is-visible');
-  window.requestAnimationFrame(() => {
+  window.setTimeout(() => {
     dragonBallToast.textContent = message;
-  });
+  }, 0);
   toastTimer = window.setTimeout(() => {
     dragonBallToast.classList.remove('is-visible');
   }, 3600);
@@ -71,6 +72,23 @@ function openShenronDialog() {
   shenronDialog.showModal();
   window.requestAnimationFrame(() => wishInput?.focus({ preventScroll: true }));
 }
+
+shenronEntry?.addEventListener('click', (event) => {
+  event.preventDefault();
+  const action = getShenronMenuAction(foundBalls, wishFulfilled);
+  if (action === 'open') {
+    openShenronDialog();
+    return;
+  }
+  if (action === 'fulfilled') {
+    announceHunt('Shenlong ya concedió tu deseo.');
+    return;
+  }
+
+  announceHunt('Encuentra las siete esferas escondidas para pedir un deseo.');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelector('#top')?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+});
 
 document.addEventListener('click', (event) => {
   const trigger = event.target instanceof Element ? event.target.closest('[data-dragon-ball]') : null;

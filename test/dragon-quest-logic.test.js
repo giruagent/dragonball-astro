@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { collectDragonBall, fulfillWish } from '../src/scripts/dragon-quest-logic.js';
+import { collectDragonBall, fulfillWish, getShenronMenuAction } from '../src/scripts/dragon-quest-logic.js';
 
 test('collects each valid Dragon Ball only once', () => {
   const first = collectDragonBall([], 1);
@@ -43,4 +43,16 @@ test('fulfills a non-empty wish after trimming whitespace', () => {
 test('rejects an empty wish and caps the spoken wish length', () => {
   assert.equal(fulfillWish('   '), null);
   assert.equal(fulfillWish('x'.repeat(140)).includes('x'.repeat(121)), false);
+});
+
+test('keeps the Shenlong menu item as a hunt hint before all spheres are found', () => {
+  assert.equal(getShenronMenuAction([1, 2, 3], false), 'find');
+});
+
+test('opens Shenlong from the menu only after all seven spheres are collected', () => {
+  assert.equal(getShenronMenuAction([1, 2, 3, 4, 5, 6, 7], false), 'open');
+});
+
+test('reports a completed wish instead of reopening Shenlong from the menu', () => {
+  assert.equal(getShenronMenuAction([1, 2, 3, 4, 5, 6, 7], true), 'fulfilled');
 });
