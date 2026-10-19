@@ -1,0 +1,141 @@
+---
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const asset = (name: string) => `${base}images/toriyama/${name}.svg`;
+const sources = [
+  { id: 'memorial', title: 'Remembering Akira Toriyama', publisher: 'Shueisha / MANGA Plus', url: 'https://mangaplus.shueisha.co.jp/web_pages/1345/' },
+  { id: 'beginnings', title: 'Looking Back on Young Goku’s Adventures (Part 1)', publisher: 'Dragon Ball Official', url: 'https://en.dragon-ball-official.com/news/01_2264.html' },
+  { id: 'dragon-boy', title: 'Toriyama Showcase: Dragon Boy', publisher: 'Dragon Ball Official', url: 'https://en.dragon-ball-official.com/news/01_1449.html' },
+  { id: 'chrono', title: 'A Character from a Classic RPG', publisher: 'Dragon Ball Official', url: 'https://en.dragon-ball-official.com/news/01_2724.html' },
+  { id: 'blue-dragon', title: 'A Game Character Designed by Akira Toriyama', publisher: 'Dragon Ball Official', url: 'https://en.dragon-ball-official.com/news/01_2621.html' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Meet Akira Toriyama, the creator of Dragon Ball. Explore his manga beginnings, character-design work, and creative legacy through official sources." />
+    <title>Akira Toriyama — The Creator Behind Dragon Ball</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+      <nav class="container" aria-label="Main navigation">
+        <a class="brand" href={base}>DBZ <span>UNIVERSE</span></a>
+        <a class="back" href={base}>← Back to the universe</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero container" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">The artist behind the adventure</p>
+          <h1 id="page-title">Akira<br /><span>Toriyama.</span></h1>
+          <p class="dates">1955 — 2024 <span aria-hidden="true">/</span> Manga creator &amp; character designer</p>
+          <p class="intro">Before there was a universe to explore, there was an imagination without limits. Meet the creator of Dragon Ball.</p>
+          <a class="button" href="#story">Explore his story <span aria-hidden="true">↘</span></a>
+        </div>
+        <figure class="hero-art">
+          <img src={asset('creative-world')} width="960" height="800" alt="A fountain pen orbiting an open comic book, an original illustration celebrating world-building." fetchpriority="high" />
+          <figcaption>01 / An imagination that opened new worlds</figcaption>
+        </figure>
+      </section>
+      <div class="chapter-nav">
+        <nav class="container" aria-label="On this page">
+          <a href="#story">01 / The beginnings</a><a href="#dragon-ball">02 / Dragon Ball</a><a href="#worlds">03 / Beyond manga</a><a href="#sources">04 / Sources</a>
+        </nav>
+      </div>
+      <section id="story" class="section container" aria-labelledby="story-title">
+        <div class="section-heading"><p class="eyebrow">01 / The beginnings</p><h2 id="story-title">Great adventures.<br />Unexpected beginnings.</h2></div>
+        <div class="story-grid">
+          <figure class="panel-art"><img src={asset('manga-craft')} width="720" height="480" alt="Original comic-panel illustration with motion lines, a speech balloon, and warm ink-like colors." loading="lazy" decoding="async" /><figcaption>02 / Humor, movement, and the possibilities of a page</figcaption></figure>
+          <div class="prose"><h3>Before the Dragon Balls</h3><p>Toriyama was already known for the hit manga <cite>Dr. Slump</cite> before he created <cite>Dragon Ball</cite>. His path to that new adventure included <cite>Dragon Boy</cite>, a one-shot made while <cite>Dr. Slump</cite> was still being serialized. <a href="#source-beginnings" aria-label="Source: manga beginnings">[2]</a></p><p>The official Toriyama Showcase describes <cite>Dragon Boy</cite> as a spiritual predecessor to <cite>Dragon Ball</cite> and recounts its kung-fu-movie inspiration. A short experiment became part of a much bigger creative journey. <a href="#source-dragon-boy" aria-label="Source: Dragon Boy">[3]</a></p></div>
+        </div>
+      </section>
+      <section id="dragon-ball" class="spotlight" aria-labelledby="dragon-title">
+        <div class="container spotlight-grid"><div><p class="eyebrow">02 / A new adventure begins</p><p class="year">1984<span aria-hidden="true">.</span></p><p class="issue">Weekly Shonen Jump · Issue No. 51</p></div><div class="prose"><h2 id="dragon-title">The beginning of<br /><span>Dragon Ball.</span></h2><p>Toriyama’s <cite>Dragon Ball</cite> began in <cite>Weekly Shonen Jump</cite> in 1984, issue No. 51. The official retrospective traces young Goku’s early adventures back to those first pages. <a href="#source-beginnings" aria-label="Source: Dragon Ball debut">[2]</a></p><p>This is the connection at the heart of this tribute: behind the characters and adventures celebrated throughout this site is Toriyama’s work as their manga creator.</p><a class="text-link" href={sources[1].url}>Explore the official retrospective ↗</a></div></div>
+      </section>
+      <section id="worlds" class="section container" aria-labelledby="worlds-title">
+        <div class="section-heading"><p class="eyebrow">03 / Beyond the manga page</p><h2 id="worlds-title">Different worlds.<br />The same imagination.</h2><p class="section-intro">His character-design work reached into video games, too.</p></div>
+        <div class="worlds-grid"><div class="game-list">
+          <article><span class="card-number">01</span><div><h3>Dragon Quest</h3><p>In Shueisha’s memorial, series creator Yuji Horii remembers Toriyama’s many character and monster illustrations across 37 years of collaboration. <a href="#source-memorial" aria-label="Source: Dragon Quest work">[1]</a></p></div></article>
+          <article><span class="card-number">02</span><div><h3>Chrono Trigger</h3><p>Toriyama was the lead character designer for this 1995 role-playing game, as documented by the official Dragon Ball site. <a href="#source-chrono" aria-label="Source: Chrono Trigger work">[4]</a></p></div></article>
+          <article><span class="card-number">03</span><div><h3>Blue Dragon</h3><p>Another setting for his character-design work, highlighted in an official feature on a character he designed for the game. <a href="#source-blue-dragon" aria-label="Source: Blue Dragon work">[5]</a></p></div></article>
+        </div><figure class="game-art"><img src={asset('game-worlds')} width="720" height="480" alt="Original game-controller illustration surrounded by a pencil, an orbit, and geometric shapes." loading="lazy" decoding="async" /><figcaption>03 / From paper to play — an editorial illustration</figcaption></figure></div>
+      </section>
+      <section class="remembrance container" aria-labelledby="remember-title"><p class="eyebrow">In remembrance / 1955 — 2024</p><h2 id="remember-title">The adventure lives on.</h2><p>Shueisha’s announcement records Toriyama’s passing on March 1, 2024, at age 68. Its tributes remember both the artist and the person behind the work. This page celebrates that creative legacy. <a href="#source-memorial" aria-label="Source: Shueisha memorial">[1]</a></p><a class="text-link" href={sources[0].url}>Read the publisher’s memorial ↗</a></section>
+      <section id="sources" class="section container sources" aria-labelledby="sources-title"><p class="eyebrow">04 / Keep exploring</p><h2 id="sources-title">The story, from the sources.</h2><p>Research drawn from the publisher and official franchise site, with references alongside factual claims.</p><ol>{sources.map((source) => <li id={`source-${source.id}`}><a href={source.url}>{source.title} <span aria-hidden="true">↗</span></a><span class="publisher">{source.publisher}</span></li>)}</ol><aside><h3>About the illustrations</h3><p>The three local SVG illustrations on this page were created for this tribute. They are conceptual editorial artwork, not Toriyama drawings, portraits, manga scans, or official game artwork. No third-party artwork is reproduced. This is an independent fan tribute, not an official or endorsed page. Referenced series and characters belong to their respective rights holders.</p></aside></section>
+    </main>
+    <footer class="container"><a class="brand" href={base}>DBZ <span>UNIVERSE</span></a><p>An independent tribute to a world of imagination.</p><a href="#main">Back to top ↑</a></footer>
+  </body>
+</html>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { scroll-behavior: smooth; background: #0a0a0a; }
+  :global(body) { margin: 0; color: #fff3df; font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; }
+  :global(::selection) { color: #0a0a0a; background: #f59e0b; }
+  a { color: #fbbf74; text-underline-offset: .25em; }
+  a:hover { color: #fff3df; }
+  a:focus-visible { outline: 3px solid #fbbf24; outline-offset: 6px; border-radius: 3px; }
+  .container { width: min(1200px, calc(100% - 3rem)); margin-inline: auto; }
+  header { border-bottom: 1px solid #50301e; }
+  header nav, footer { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.4rem; }
+  .brand { font-size: 1.5rem; font-weight: 900; color: #f59e0b; text-decoration: none; white-space: nowrap; }
+  .brand span { font-size: .7rem; letter-spacing: .16em; color: #e9c39a; margin-left: .4rem; }
+  .back { font-size: .85rem; text-decoration: none; }
+  .skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; background: #0a0a0a; padding: 1rem; }
+  .skip-link:focus { top: 1rem; }
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center; padding-block: 5rem; }
+  .eyebrow { color: #fbbf74; text-transform: uppercase; letter-spacing: .16em; font-size: .73rem; font-weight: 700; margin: 0 0 1.3rem; }
+  h1 { font-size: clamp(4rem, 8.5vw, 7.2rem); line-height: .98; letter-spacing: -.065em; margin: 0 0 1.8rem; }
+  h1 span, h2 span { color: #f59e0b; }
+  .dates { color: #e5bd97; font-size: .8rem; }
+  .dates span { padding-inline: .4rem; color: #f59e0b; }
+  .intro { max-width: 32rem; color: #e5bd97; font-size: 1.15rem; margin-block: 1.5rem 2rem; }
+  .button { display: inline-flex; gap: 2rem; background: linear-gradient(110deg, #f59e0b, #f97316); padding: .85rem 1.5rem; border-radius: 999px; color: #1c1008; font-weight: 750; text-decoration: none; }
+  .button:hover { color: #1c1008; background: #fcd34d; }
+  figure { margin: 0; min-width: 0; }
+  img { display: block; width: 100%; height: auto; border-radius: 1.2rem; }
+  figcaption { margin-top: .8rem; color: #d1ac8a; font-size: .72rem; letter-spacing: .03em; }
+  .chapter-nav { border-block: 1px solid #50301e; background: #140e0a; }
+  .chapter-nav nav { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; padding-block: 1rem; }
+  .chapter-nav a { font-size: .78rem; text-decoration: none; }
+  .section { padding-block: 5.5rem; scroll-margin-top: 2rem; }
+  .section-heading { margin-bottom: 2.5rem; }
+  h2 { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.12; letter-spacing: -.04em; margin: 0 0 1.5rem; }
+  h3 { font-size: 1.3rem; line-height: 1.3; margin: 0 0 .8rem; }
+  p { margin: 0 0 1.2rem; }
+  cite { font-style: normal; }
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
+  .prose p, .section-intro, .sources > p { color: #e1bd9e; }
+  .spotlight { background: linear-gradient(120deg, #32170c, #130f0c); border-block: 1px solid #643518; padding-block: 5rem; scroll-margin-top: 2rem; }
+  .spotlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .year { font-size: clamp(5rem, 12vw, 9rem); font-weight: 900; line-height: 1; letter-spacing: -.07em; margin-bottom: 1rem; }
+  .year span { color: #f97316; }
+  .issue { color: #e5bd97; font-size: .85rem; }
+  .text-link { font-weight: 650; font-size: .9rem; }
+  .worlds-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center; }
+  .game-list article { display: flex; gap: 1.5rem; padding-block: 1.5rem; border-top: 1px solid #50301e; }
+  .card-number { color: #f59e0b; font-size: .8rem; }
+  .game-list p { color: #e1bd9e; font-size: .95rem; margin: 0; }
+  .remembrance { padding: 3.5rem; border: 1px solid #70401c; border-radius: 1.5rem; background: radial-gradient(ellipse at top, #3c1d0e, #130e0a); text-align: center; }
+  .remembrance p:not(.eyebrow) { max-width: 42rem; margin-inline: auto; color: #e1bd9e; }
+  .sources ol { padding-left: 1.5rem; margin-top: 2rem; }
+  .sources li { padding: .8rem 0 .8rem .5rem; border-bottom: 1px solid #3c291c; scroll-margin-top: 2rem; }
+  .publisher { display: block; color: #cda786; font-size: .8rem; }
+  aside { margin-top: 2.5rem; padding: 1.5rem; background: #17110d; border-radius: .8rem; }
+  aside h3 { font-size: 1rem; }
+  aside p { color: #d1ac8a; font-size: .85rem; margin: 0; }
+  footer { border-top: 1px solid #50301e; flex-wrap: wrap; }
+  footer p, footer > a:last-child { font-size: .8rem; margin: 0; color: #d1ac8a; }
+  @media (max-width: 800px) {
+    .hero, .story-grid, .spotlight-grid, .worlds-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero { padding-block: 3rem; }
+    .hero-art { max-width: 35rem; }
+    .section { padding-block: 3.5rem; }
+    .spotlight { padding-block: 3.5rem; }
+    .remembrance { padding: 2rem 1.25rem; }
+    .back { max-width: 9rem; text-align: right; }
+  }
+  @media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } }
+</style>
