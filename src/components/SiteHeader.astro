@@ -1,5 +1,5 @@
 ---
-interface Props { currentPage?: 'home' | 'toriyama' }
+interface Props { currentPage?: 'home' | 'toriyama' | 'characters' }
 const { currentPage = 'home' } = Astro.props;
 const siteBase = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const homeHref = currentPage === 'home' ? '' : siteBase;
@@ -8,6 +8,6 @@ const homeHref = currentPage === 'home' ? '' : siteBase;
   <a class="brand" href={currentPage === 'home' ? '#top' : siteBase} aria-label="Dragon Ball, inicio"><span class="brand-orb" aria-hidden="true">★</span><span>DRAGON<span class="brand-accent">BALL</span></span></a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir navegación"><span></span><span></span><span></span></button>
   <nav class="site-nav" id="primary-navigation" aria-label="Navegación principal">
-    <a href={`${homeHref}#warriors`}>Guerreros</a><a href={`${homeHref}#transformations`}>Transformaciones</a><a href={`${homeHref}#sagas`}>Sagas</a><a href={`${homeHref}#quiz`}>Trivia</a><a href={`${siteBase}akira-toriyama/`} aria-current={currentPage === 'toriyama' ? 'page' : undefined}>Akira Toriyama</a><a class="nav-cta" href={currentPage === 'home' ? '#top' : `${siteBase}#top`} data-shenron-entry={currentPage === 'home' ? '' : undefined}>{currentPage === 'home' ? 'Pide un deseo' : 'Volver al inicio'}</a>
+    <a href={`${homeHref}#warriors`}>Guerreros</a><a href={`${homeHref}#transformations`}>Transformaciones</a><a href={`${homeHref}#sagas`}>Sagas</a><a href={`${homeHref}#quiz`}>Trivia</a><a href={`${siteBase}personajes/`} aria-current={currentPage === 'characters' ? 'page' : undefined}>Personajes</a><a href={`${siteBase}akira-toriyama/`} aria-current={currentPage === 'toriyama' ? 'page' : undefined}>Akira Toriyama</a><a class="nav-cta" href={currentPage === 'home' ? '#top' : `${siteBase}#top`} data-shenron-entry={currentPage === 'home' ? '' : undefined}>{currentPage === 'home' ? 'Pide un deseo' : 'Volver al inicio'}</a>
   </nav>
 </header>
