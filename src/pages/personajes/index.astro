@@ -1,0 +1,60 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import WarriorCard from '../../components/WarriorCard.astro';
+import { warriors } from '../../data/warriors.js';
+import '../../styles/global.css';
+
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b10" />
+    <meta name="description" content="Conoce a los guerreros de Dragon Ball: Goku, Vegeta, Gohan y Piccolo." />
+    <title>Personajes — Dragon Ball</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <SiteHeader currentPage="characters" />
+    <main id="main" class="characters-page">
+      <section class="characters-hero" aria-labelledby="characters-title">
+        <div class="characters-hero-inner">
+          <p class="eyebrow">Guerreros de todos los rincones del universo</p>
+          <h1 id="characters-title">Conoce a los<br /><span>personajes.</span></h1>
+          <p>Valentía, rivalidad y amistad: descubre a quienes hacen de cada batalla una aventura inolvidable.</p>
+          <a class="button button-primary" href="#roster">Explora el equipo <span aria-hidden="true">↓</span></a>
+        </div>
+        <span class="characters-orb" aria-hidden="true">★</span>
+      </section>
+      <section class="section characters-roster" id="roster" aria-labelledby="roster-title">
+        <div class="section-heading"><p class="eyebrow">01 / Los defensores de la Tierra</p><h2 id="roster-title">Los guerreros Z</h2><p>Personalidades únicas, unidos por la aventura y el deseo de proteger a sus seres queridos.</p></div>
+        <div class="warriors-grid">{warriors.map((warrior, index) => <WarriorCard {...warrior} dragonBallNumber={index + 2} />)}</div>
+        <p class="note">Descripciones creadas por fans. Las transformaciones y técnicas pueden variar según la saga.</p>
+      </section>
+      <section class="characters-next" aria-label="Sigue explorando"><p class="eyebrow">La aventura continúa</p><h2>Siempre hay un nuevo<br /><span>nivel por alcanzar.</span></h2><a class="button button-secondary" href={`${base}#sagas`}>Explora las sagas <span aria-hidden="true">↗</span></a></section>
+    </main>
+    <footer class="site-footer"><strong>DRAGON BALL · TRIBUTO DE FANS</strong><p>Hecho por fans, para fans. Dragon Ball y sus personajes pertenecen a sus respectivos creadores y titulares de derechos.</p><p class="dragonball-footer">Sin afiliación oficial. Sigue entrenando y soñando.</p></footer>
+    <script>import '../../scripts/navigation.js';</script>
+  </body>
+</html>
+
+<style>
+  .characters-page { overflow:hidden }
+  .characters-hero { min-height:480px; position:relative; display:grid; align-items:center; padding:5.5rem max(1.25rem,calc((100vw - var(--content))/2)); isolation:isolate; border-bottom:1px solid var(--line) }
+  .characters-hero::before { content:''; position:absolute; z-index:-1; width:min(52vw,580px); aspect-ratio:1; right:6%; top:50%; transform:translateY(-50%); border-radius:50%; background:radial-gradient(circle,#ffbd45 0 4%,#e66b20 5% 12%,#7c261c 13% 22%,#28161d 42%,transparent 70%); opacity:.67; filter:drop-shadow(0 0 55px #ef542a44) }
+  .characters-hero-inner { max-width:650px }
+  .characters-hero h1,.characters-next h2 { margin:0; font:900 clamp(3.8rem,9vw,7rem)/.88 var(--display); letter-spacing:-.03em; text-transform:uppercase }
+  .characters-hero h1 span,.characters-next h2 span { color:var(--orange) }
+  .characters-hero-inner>p:not(.eyebrow) { max-width:520px; margin:1.4rem 0 1.7rem; color:#c1c4ca; font-size:1.05rem }
+  .characters-orb { position:absolute; right:calc(max(1.25rem, (100vw - var(--content))/2 + 7rem)); top:50%; display:grid; place-items:center; width:54px; aspect-ratio:1; transform:translateY(-50%); border-radius:50%; color:#a72212; background:radial-gradient(circle at 35% 30%,#ffe089,#ff9f1c 58%,#d94a13); box-shadow:0 0 28px #ff9f1c55; font-size:1.4rem }
+  .characters-roster { padding-top:5rem }
+  .characters-roster .section-heading h2 { font-size:clamp(2.8rem,6vw,5rem) }
+  .characters-next { padding:5rem 1.25rem 6rem; text-align:center; background:linear-gradient(180deg,transparent,#17120f 55%,transparent) }
+  .characters-next .eyebrow { margin-bottom:1rem }
+  .characters-next h2 { font-size:clamp(2.6rem,6vw,4.8rem) }
+  .characters-next .button { margin-top:1.7rem }
+  @media(max-width:640px) { .characters-hero { min-height:440px; padding-top:4rem; padding-bottom:4rem } .characters-hero::before { width:85vw; right:-35%; top:58%; opacity:.44 } .characters-orb { right:1.5rem; top:auto; bottom:2rem; width:42px } .characters-roster { padding-top:3.5rem } }
+</style>
