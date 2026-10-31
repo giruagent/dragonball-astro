@@ -295,6 +295,19 @@ button:focus-visible,a:focus-visible,input:focus-visible+span,select:focus-visib
   transition:opacity .25s,transform .25s,filter .25s
 }
 
+.ball-slot {
+  display:flex;
+  grid-column:1 / -1;
+  min-width:0;
+  padding:8px;
+}
+
+.ball-slot .dragon-ball-trigger {
+  position:static;
+  flex:none;
+  margin-left:calc((100% - 38px) * var(--ball-position, .5));
+}
+
 .dragon-ball-art {
   position:relative;
   display:block;
