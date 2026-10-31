@@ -2,6 +2,9 @@
 import SiteHeader from '../../components/SiteHeader.astro';
 import WarriorCard from '../../components/WarriorCard.astro';
 import { warriors } from '../../data/warriors.js';
+import catalog from '../../data/character-catalog.json';
+
+const series = [...new Set(catalog.map((character) => character.series))].sort((a, b) => a.localeCompare(b, 'es'));
 import '../../styles/global.css';
 
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
@@ -25,9 +28,24 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           <p class="eyebrow">Guerreros de todos los rincones del universo</p>
           <h1 id="characters-title">Conoce a los<br /><span>personajes.</span></h1>
           <p>Valentía, rivalidad y amistad: descubre a quienes hacen de cada batalla una aventura inolvidable.</p>
-          <a class="button button-primary" href="#roster">Explora el equipo <span aria-hidden="true">↓</span></a>
+          <a class="button button-primary" href="#catalogo">Explora los personajes <span aria-hidden="true">↓</span></a>
         </div>
         <span class="characters-orb" aria-hidden="true">★</span>
+      </section>
+      <section class="section character-catalog" id="catalogo" aria-labelledby="catalog-title" data-catalog>
+        <div class="section-heading"><p class="eyebrow">De la Tierra a otros universos</p><h2 id="catalog-title">El catálogo</h2><p>Una selección no exhaustiva de personajes y sus historias. La serie indicada es una categoría editorial y no indica todas sus apariciones.</p></div>
+        <div class="catalog-controls" data-controls hidden>
+          <div><label for="character-search">Buscar personajes</label><input id="character-search" type="search" placeholder="Nombre, afiliación o descripción" autocomplete="off" /></div>
+          <div><label for="character-series">Grupo de personajes</label><select id="character-series"><option value="">Todos los grupos</option>{series.map((name) => <option value={name}>{name}</option>)}</select></div>
+          <button type="button" class="button button-secondary" data-clear>Limpiar filtros</button>
+        </div>
+        <p class="catalog-count" data-count role="status" aria-live="polite">{catalog.length} personajes</p>
+        <div class="catalog-grid" data-grid>
+          {catalog.map((character) => <article class="catalog-card" data-character data-series={character.series} data-search={`${character.name} ${character.series} ${character.affiliation} ${character.description}`}><p class="catalog-series">{character.series}</p><h3>{character.name}</h3><p>{character.description}</p><p class="catalog-affiliation"><strong>Afiliación:</strong> {character.affiliation}</p></article>)}
+        </div>
+        <p data-empty hidden>No hay personajes que coincidan. Prueba otra búsqueda o limpia los filtros.</p>
+        <button class="button button-secondary catalog-more" type="button" data-more hidden>Mostrar más</button>
+        <p class="note">Descripciones creadas por fans. Los nombres y detalles pueden variar según la versión.</p>
       </section>
       <section class="section characters-roster" id="roster" aria-labelledby="roster-title">
         <div class="section-heading"><p class="eyebrow">01 / Los defensores de la Tierra</p><h2 id="roster-title">Los guerreros Z</h2><p>Personalidades únicas, unidos por la aventura y el deseo de proteger a sus seres queridos.</p></div>
@@ -37,7 +55,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
       <section class="characters-next" aria-label="Sigue explorando"><p class="eyebrow">La aventura continúa</p><h2>Siempre hay un nuevo<br /><span>nivel por alcanzar.</span></h2><a class="button button-secondary" href={`${base}#sagas`}>Explora las sagas <span aria-hidden="true">↗</span></a></section>
     </main>
     <footer class="site-footer"><strong>DRAGON BALL · TRIBUTO DE FANS</strong><p>Hecho por fans, para fans. Dragon Ball y sus personajes pertenecen a sus respectivos creadores y titulares de derechos.</p><p class="dragonball-footer">Sin afiliación oficial. Sigue entrenando y soñando.</p></footer>
-    <script>import '../../scripts/navigation.js';</script>
+    <script>import '../../scripts/navigation.js'; import '../../scripts/character-catalog.js';</script>
   </body>
 </html>
 
@@ -50,6 +68,25 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
   .characters-hero h1 span,.characters-next h2 span { color:var(--orange) }
   .characters-hero-inner>p:not(.eyebrow) { max-width:520px; margin:1.4rem 0 1.7rem; color:#c1c4ca; font-size:1.05rem }
   .characters-orb { position:absolute; right:calc(max(1.25rem, (100vw - var(--content))/2 + 7rem)); top:50%; display:grid; place-items:center; width:54px; aspect-ratio:1; transform:translateY(-50%); border-radius:50%; color:#a72212; background:radial-gradient(circle at 35% 30%,#ffe089,#ff9f1c 58%,#d94a13); box-shadow:0 0 28px #ff9f1c55; font-size:1.4rem }
+  .character-catalog { padding-top:5rem; padding-bottom:3rem }
+  .catalog-controls:not([hidden]) { display:grid; grid-template-columns:2fr 1fr auto; gap:1rem; align-items:end; padding:1.25rem; background:var(--surface); border:1px solid var(--line); border-radius:14px }
+  .catalog-controls label { display:block; font-weight:700; margin-bottom:.4rem }
+  .catalog-controls input,.catalog-controls select { width:100%; min-width:0; min-height:48px; padding:.65rem .8rem; color:var(--text); background:#090b10; border:1px solid #777e89; border-radius:8px }
+  .catalog-controls input:focus-visible { outline:3px solid #ffd166; outline-offset:3px }
+  .catalog-controls [data-clear] { min-width:max-content }
+  .catalog-count { color:#d1d3d8; margin:1.5rem 0 1rem }
+  .catalog-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem }
+  .catalog-card { min-width:0; padding:1.35rem; border:1px solid var(--line); border-radius:14px; background:linear-gradient(160deg,#1b222d,#10141b 72%); overflow-wrap:anywhere; content-visibility:auto; contain-intrinsic-size:auto 220px }
+  .catalog-card h3 { margin:.25rem 0 .65rem; font:800 1.85rem/1 var(--display) }
+  .catalog-card p { color:#d1d3d8; font-size:.9rem; margin:.6rem 0 0 }
+  .catalog-card .catalog-series { color:#ffc064; font-weight:700; font-size:.78rem; margin:0 }
+  .catalog-card .catalog-affiliation { color:#b4b8c1; font-size:.8rem; margin-top:1rem }
+  .catalog-affiliation strong { color:#f7f3ea }
+  .catalog-more { margin:1.5rem auto 0; display:block }
+  .catalog-more[hidden] { display:none }
+  .catalog-more[aria-disabled="true"] { cursor:default; transform:none }
+  @media(max-width:900px) { .catalog-grid { grid-template-columns:repeat(2,minmax(0,1fr)) } .catalog-controls:not([hidden]) { grid-template-columns:1fr 1fr } }
+  @media(max-width:640px) { .catalog-controls:not([hidden]),.catalog-grid { grid-template-columns:1fr } .character-catalog { padding-top:3.5rem } }
   .characters-roster { padding-top:5rem }
   .characters-roster .section-heading h2 { font-size:clamp(2.8rem,6vw,5rem) }
   .characters-next { padding:5rem 1.25rem 6rem; text-align:center; background:linear-gradient(180deg,transparent,#17120f 55%,transparent) }
