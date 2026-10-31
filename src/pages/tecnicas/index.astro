@@ -1,0 +1,76 @@
+---
+import SiteHeader from '../../components/SiteHeader.astro';
+import { techniqueGroups } from '../../data/techniques.js';
+import '../../styles/global.css';
+
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b10" />
+    <meta name="description" content="Explora técnicas y poderes emblemáticos de Dragon Ball, desde el Kamehameha hasta el Ultra Instinto." />
+    <title>Técnicas y poderes — Dragon Ball</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <SiteHeader currentPage="techniques" />
+    <main id="main">
+      <section class="techniques-hero" aria-labelledby="techniques-title">
+        <div class="hero-inner">
+          <p class="eyebrow">El poder de los guerreros</p>
+          <h1 id="techniques-title">Técnicas y<br /><span>poderes.</span></h1>
+          <p>Ondas de energía, movimientos imposibles y habilidades que han marcado generaciones de batallas.</p>
+          <a class="button button-primary" href="#explorar">Explora las técnicas <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="energy-orb" aria-hidden="true"></div>
+      </section>
+      <div class="section catalog" id="explorar">
+        <div class="section-heading"><p class="eyebrow">De la Tierra a los confines del universo</p><h2>El arte de la batalla</h2><p>Una selección de técnicas y habilidades memorables de Dragon Ball, Dragon Ball Z y Dragon Ball Super.</p></div>
+        <nav class="category-nav" aria-label="Categorías de técnicas">
+          {techniqueGroups.map((group) => <a href={`#${group.id}`}>{group.title}</a>)}
+        </nav>
+        {techniqueGroups.map((group) => (
+          <section class="technique-group" id={group.id} aria-labelledby={`${group.id}-title`}>
+            <div class="group-heading"><h2 id={`${group.id}-title`}>{group.title}</h2><p>{group.description}</p></div>
+            <div class="technique-grid">
+              {group.techniques.map(([name, users, description]) => (
+                <article class="technique-card"><h3>{name}</h3><p>{description}</p><p class="users"><strong>Usuarios destacados:</strong> {users}</p></article>
+              ))}
+            </div>
+          </section>
+        ))}
+        <p class="note">Selección creada por fans, no exhaustiva. Los nombres y las capacidades pueden variar según la versión y la saga.</p>
+      </div>
+    </main>
+    <footer class="site-footer"><strong>DRAGON BALL · TRIBUTO DE FANS</strong><p>Hecho por fans, para fans. Dragon Ball y sus personajes pertenecen a sus respectivos creadores y titulares de derechos.</p><p class="dragonball-footer">Sin afiliación oficial. Sigue entrenando y soñando.</p></footer>
+    <script>import '../../scripts/navigation.js';</script>
+  </body>
+</html>
+<style>
+  .techniques-hero { position:relative; isolation:isolate; overflow:hidden; min-height:430px; display:grid; align-items:center; padding:5rem max(1.25rem,calc((100vw - var(--content))/2)); border-bottom:1px solid var(--line) }
+  .hero-inner { max-width:650px }
+  .techniques-hero h1 { margin:0; font:900 clamp(3.8rem,9vw,7rem)/.88 var(--display); letter-spacing:-.03em; text-transform:uppercase }
+  .techniques-hero h1 span { color:var(--orange) }
+  .hero-inner>p:not(.eyebrow) { max-width:520px; margin:1.4rem 0 1.7rem; color:#c1c4ca; font-size:1.05rem }
+  .energy-orb { position:absolute; z-index:-1; right:9%; top:50%; width:min(37vw,380px); aspect-ratio:1; transform:translateY(-50%); border-radius:50%; background:radial-gradient(circle,#fff 0,#b5eaff 7%,#55b8fc 15%,#2357a5 30%,transparent 68%); opacity:.75; filter:drop-shadow(0 0 40px #338cdd66) }
+  .catalog { padding-top:5rem }
+  .category-nav { display:flex; flex-wrap:wrap; gap:.7rem; margin:0 0 3.5rem }
+  .category-nav a { border:1px solid #ff9f1c88; border-radius:999px; padding:.65rem 1rem; color:#ffd18a; text-decoration:none; font-weight:700; font-size:.9rem }
+  .category-nav a:hover { background:#ff9f1c22 }
+  .technique-group { margin:0 0 4rem; scroll-margin-top:6rem }
+  .group-heading { border-bottom:1px solid var(--line); margin-bottom:1.5rem; padding-bottom:1rem }
+  .group-heading h2 { margin:0; font:800 clamp(2rem,4vw,3rem)/1 var(--display); text-transform:uppercase }
+  .group-heading p { color:var(--muted); margin:.7rem 0 0; max-width:65ch }
+  .technique-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem }
+  .technique-card { padding:1.5rem; background:linear-gradient(145deg,#182233,var(--surface)); border:1px solid #76b8ed33; border-radius:.75rem; min-width:0 }
+  .technique-card h3 { color:#9ed5ff; font:800 1.6rem/1.1 var(--display); margin:0 0 .7rem; overflow-wrap:anywhere }
+  .technique-card p { color:#d1d3d8; margin:0; font-size:.9rem }
+  .technique-card .users { margin-top:1rem; color:#b8c8db; font-size:.8rem }
+  .users strong { color:#f7f3ea }
+  @media(max-width:900px) { .technique-grid { grid-template-columns:repeat(2,minmax(0,1fr)) } }
+  @media(max-width:640px) { .techniques-hero { min-height:400px; padding-top:4rem; padding-bottom:4rem } .energy-orb { width:70vw; right:-30%; opacity:.35 } .technique-grid { grid-template-columns:1fr } .catalog { padding-top:3.5rem } }
+</style>
