@@ -1,5 +1,6 @@
 import { scoreAnswers } from './quiz-logic.js';
 import { collectDragonBall, fulfillWish, getShenronMenuAction } from './dragon-quest-logic.js';
+import { createShenlongController } from './shenlong-controller.js';
 
 const quizForm = document.querySelector('#quiz-form');
 quizForm?.addEventListener('submit', (event) => {
@@ -28,6 +29,7 @@ quizForm?.addEventListener('submit', (event) => {
 const dragonBallTriggers = [...document.querySelectorAll('[data-dragon-ball]')];
 const dragonBallToast = document.querySelector('#dragon-ball-toast');
 const shenronDialog = document.querySelector('#shenron-scene');
+const shenlongController = createShenlongController(() => import('./shenlong-scene.js'));
 const shenronEntry = document.querySelector('[data-shenron-entry]');
 const wishForm = document.querySelector('#wish-form');
 const wishInput = document.querySelector('#wish-text');
@@ -52,6 +54,8 @@ function announceHunt(message) {
 function openShenronDialog() {
   if (!shenronDialog || shenronDialog.open || wishFulfilled) return;
   shenronDialog.showModal();
+  const stage = shenronDialog.querySelector('.shenron-stage');
+  if (stage) shenlongController.open(stage);
   window.requestAnimationFrame(() => wishInput?.focus({ preventScroll: true }));
 }
 
@@ -94,11 +98,21 @@ document.addEventListener('click', (event) => {
   }
 });
 
-shenronDialog?.querySelector('[data-close-wish]')?.addEventListener('click', () => {
-  shenronDialog.close();
+function closeShenronDialog() {
+  shenlongController.close();
+  if (shenronDialog?.open) shenronDialog.close();
+}
+
+shenronDialog?.querySelector('[data-close-wish]')?.addEventListener('click', closeShenronDialog);
+shenronDialog?.addEventListener('cancel', (event) => {
+  event.preventDefault();
+  closeShenronDialog();
 });
 
 shenronDialog?.addEventListener('close', () => {
+  // A close event is queued and may arrive after the dialog was reopened.
+  if (shenronDialog.open) return;
+  shenlongController.close();
   if (foundBalls.length === 7 && !wishFulfilled) {
     announceHunt('Las siete esferas siguen reunidas. Toca una para volver a llamar a Shenlong.');
   }
@@ -135,7 +149,7 @@ wishForm?.addEventListener('submit', (event) => {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.setTimeout(() => {
-    if (shenronDialog.open) shenronDialog.close();
+    closeShenronDialog();
     shenronDialog.classList.remove('is-fulfilling');
     announceHunt('¡Deseo concedido! Las esferas se han dispersado por el universo.');
   }, reducedMotion ? 350 : 3100);
