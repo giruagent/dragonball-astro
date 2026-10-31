@@ -7,6 +7,7 @@ import WishSection from '../components/WishSection.astro';
 import LoreSections from '../components/LoreSections.astro';
 import { warriors } from '../data/warriors.js';
 import '../styles/global.css';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <!doctype html>
 <html lang="es">
@@ -15,6 +16,7 @@ import '../styles/global.css';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#090b10" />
     <meta name="description" content="Un tributo hecho por fans a Dragon Ball: sus guerreros, aventuras inolvidables y un universo que nunca deja de sorprender." />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <title>Dragon Ball — Un tributo de fans</title>
   </head>
   <body>
