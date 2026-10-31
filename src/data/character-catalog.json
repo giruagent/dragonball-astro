@@ -1,0 +1,1232 @@
+[
+  {
+    "name": "Goku",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Saiyan criado en la Tierra y apasionado de las artes marciales."
+  },
+  {
+    "name": "Bulma",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Inventora de Capsule Corporation y compañera de aventuras de Goku."
+  },
+  {
+    "name": "Krillin",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Discípulo del Maestro Roshi y amigo cercano de Goku."
+  },
+  {
+    "name": "Yamcha",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Antiguo bandido del desierto convertido en aliado de Goku."
+  },
+  {
+    "name": "Tenshinhan",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Artista marcial de tres ojos que entrenó con la escuela de la Grulla."
+  },
+  {
+    "name": "Chaoz",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Compañero de Tenshinhan con habilidades psíquicas."
+  },
+  {
+    "name": "Maestro Roshi",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Veterano maestro de artes marciales de la escuela de la Tortuga."
+  },
+  {
+    "name": "Chi-Chi",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hija del Rey Ox y esposa de Goku."
+  },
+  {
+    "name": "Oolong",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Cerdo capaz de cambiar de forma que acompaña al grupo en sus viajes."
+  },
+  {
+    "name": "Puar",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Compañero de Yamcha capaz de cambiar de forma."
+  },
+  {
+    "name": "Yajirobe",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Espadachín que vive cerca de la torre de Karin."
+  },
+  {
+    "name": "Launch",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Mujer cuya personalidad cambia cuando estornuda."
+  },
+  {
+    "name": "Rey Ox",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Padre de Chi-Chi y antiguo alumno del Maestro Roshi."
+  },
+  {
+    "name": "Abuelo Gohan",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Anciano artista marcial que crió a Goku."
+  },
+  {
+    "name": "Karin",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Maestro felino que habita en lo alto de su torre."
+  },
+  {
+    "name": "Mr. Popo",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Asistente del guardián de la Tierra."
+  },
+  {
+    "name": "Kami",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Antiguo guardián namekiano de la Tierra."
+  },
+  {
+    "name": "Shenron",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Dragón invocado mediante las esferas del dragón terrestres."
+  },
+  {
+    "name": "Tortuga",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Compañera del Maestro Roshi que vive en la isla Kame."
+  },
+  {
+    "name": "Dr. Brief",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Científico de Capsule Corporation y padre de Bulma."
+  },
+  {
+    "name": "Baba",
+    "series": "Dragon Ball",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Adivina y hermana mayor del Maestro Roshi."
+  },
+  {
+    "name": "Nam",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Luchador que participa en el torneo para ayudar a su aldea."
+  },
+  {
+    "name": "Giran",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Competidor alado del torneo de artes marciales."
+  },
+  {
+    "name": "Ranfan",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Luchadora que compite en el torneo de artes marciales."
+  },
+  {
+    "name": "Bacterian",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Participante del torneo que utiliza su hedor contra sus rivales."
+  },
+  {
+    "name": "Mr. Satan",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Campeón de artes marciales y padre de Videl."
+  },
+  {
+    "name": "Comandante Red",
+    "series": "Dragon Ball",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Dirigente del Ejército Red Ribbon."
+  },
+  {
+    "name": "Oficial Black",
+    "series": "Dragon Ball",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Subordinado del comandante Red en el Ejército Red Ribbon."
+  },
+  {
+    "name": "General Blue",
+    "series": "Dragon Ball",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Oficial de Red Ribbon dotado de poderes psíquicos."
+  },
+  {
+    "name": "Coronel Silver",
+    "series": "Dragon Ball",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Oficial de Red Ribbon que busca las esferas del dragón."
+  },
+  {
+    "name": "Coronel White",
+    "series": "Dragon Ball",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Comandante de la Torre Músculo de Red Ribbon."
+  },
+  {
+    "name": "Sargento Metallic",
+    "series": "Dragon Ball",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Androide que combate a Goku en la Torre Músculo."
+  },
+  {
+    "name": "Androide 8",
+    "series": "Dragon Ball",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Androide bondadoso de Red Ribbon que se hace amigo de Goku."
+  },
+  {
+    "name": "Dr. Gero",
+    "series": "Dragon Ball Z",
+    "affiliation": "Ejército Red Ribbon",
+    "description": "Científico de Red Ribbon responsable de crear androides."
+  },
+  {
+    "name": "Tao Pai Pai",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Asesino a sueldo contratado para enfrentarse a Goku."
+  },
+  {
+    "name": "Maestro Tsuru",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Rival del Maestro Roshi y maestro de Tenshinhan y Chaoz."
+  },
+  {
+    "name": "Piccolo Daimao",
+    "series": "Dragon Ball",
+    "affiliation": "Clan del Rey Demonio",
+    "description": "Rey demonio que amenaza la Tierra durante la juventud de Goku."
+  },
+  {
+    "name": "Piano",
+    "series": "Dragon Ball",
+    "affiliation": "Clan del Rey Demonio",
+    "description": "Consejero y descendiente del Rey Demonio Piccolo."
+  },
+  {
+    "name": "Tambourine",
+    "series": "Dragon Ball",
+    "affiliation": "Clan del Rey Demonio",
+    "description": "Hijo del Rey Demonio Piccolo que persigue a artistas marciales."
+  },
+  {
+    "name": "Cymbal",
+    "series": "Dragon Ball",
+    "affiliation": "Clan del Rey Demonio",
+    "description": "Hijo del Rey Demonio Piccolo enviado a buscar las esferas."
+  },
+  {
+    "name": "Drum",
+    "series": "Dragon Ball",
+    "affiliation": "Clan del Rey Demonio",
+    "description": "Guerrero creado por el Rey Demonio Piccolo."
+  },
+  {
+    "name": "Pilaf",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Pequeño aspirante a conquistador que busca las esferas del dragón."
+  },
+  {
+    "name": "Mai",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Integrante de la banda de Pilaf y compañera de Shu."
+  },
+  {
+    "name": "Shu",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Ninja canino que forma parte de la banda de Pilaf."
+  },
+  {
+    "name": "Bora",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Guardián de la tierra sagrada bajo la torre de Karin."
+  },
+  {
+    "name": "Upa",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Hijo de Bora que conoce a Goku cerca de la torre de Karin."
+  },
+  {
+    "name": "Rey Chappa",
+    "series": "Dragon Ball",
+    "affiliation": "Otros personajes",
+    "description": "Maestro de artes marciales que participa en el torneo."
+  },
+  {
+    "name": "Gohan",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hijo mayor de Goku y Chi-Chi, estudioso y guerrero."
+  },
+  {
+    "name": "Piccolo",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Guerrero namekiano que pasa de ser rival a aliado y mentor de Gohan."
+  },
+  {
+    "name": "Vegeta",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Príncipe saiyan y rival de Goku que acaba defendiendo la Tierra."
+  },
+  {
+    "name": "Trunks",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hijo de Vegeta y Bulma nacido en la línea temporal principal."
+  },
+  {
+    "name": "Trunks del futuro",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Guerrero de una línea temporal alternativa que viaja al pasado."
+  },
+  {
+    "name": "Goten",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hijo menor de Goku y Chi-Chi."
+  },
+  {
+    "name": "Videl",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hija de Mr. Satan y artista marcial que se acerca a Gohan."
+  },
+  {
+    "name": "Pan",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hija de Gohan y Videl y nieta de Goku."
+  },
+  {
+    "name": "Bra",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hija de Vegeta y Bulma y hermana de Trunks."
+  },
+  {
+    "name": "Androide 17",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Humano modificado por el Dr. Gero y hermano de la Androide 18."
+  },
+  {
+    "name": "Androide 18",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Humana modificada por el Dr. Gero que forma una familia con Krillin."
+  },
+  {
+    "name": "Androide 16",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Androide de gran fuerza creado por el Dr. Gero."
+  },
+  {
+    "name": "Marron",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Hija de Krillin y la Androide 18."
+  },
+  {
+    "name": "Uub",
+    "series": "Dragon Ball Z",
+    "affiliation": "Guerreros de la Tierra",
+    "description": "Joven luchador que conoce a Goku al final de Dragon Ball Z."
+  },
+  {
+    "name": "Raditz",
+    "series": "Dragon Ball Z",
+    "affiliation": "Saiyans",
+    "description": "Guerrero saiyan y hermano mayor de Goku."
+  },
+  {
+    "name": "Nappa",
+    "series": "Dragon Ball Z",
+    "affiliation": "Saiyans",
+    "description": "Guerrero saiyan que llega a la Tierra junto a Vegeta."
+  },
+  {
+    "name": "Bardock",
+    "series": "Dragon Ball Z",
+    "affiliation": "Saiyans",
+    "description": "Guerrero saiyan y padre de Goku."
+  },
+  {
+    "name": "Gine",
+    "series": "Dragon Ball Super",
+    "affiliation": "Saiyans",
+    "description": "Saiyan y madre de Goku."
+  },
+  {
+    "name": "Rey Vegeta",
+    "series": "Dragon Ball Z",
+    "affiliation": "Saiyans",
+    "description": "Rey de los saiyans y padre del príncipe Vegeta."
+  },
+  {
+    "name": "Tarble",
+    "series": "Dragon Ball Z",
+    "affiliation": "Saiyans",
+    "description": "Hermano menor de Vegeta que aparece en un especial animado."
+  },
+  {
+    "name": "Freezer",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Tirano espacial responsable de la destrucción del planeta Vegeta."
+  },
+  {
+    "name": "Rey Cold",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Padre de Freezer que llega a la Tierra con su hijo."
+  },
+  {
+    "name": "Zarbon",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Guerrero al servicio de Freezer capaz de transformarse."
+  },
+  {
+    "name": "Dodoria",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Guerrero al servicio de Freezer que participa en la invasión de Namek."
+  },
+  {
+    "name": "Capitán Ginyu",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Líder de las Fuerzas Especiales Ginyu con capacidad de intercambiar cuerpos."
+  },
+  {
+    "name": "Jeice",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Miembro de las Fuerzas Especiales Ginyu de piel roja."
+  },
+  {
+    "name": "Burter",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Miembro de las Fuerzas Especiales Ginyu conocido por su velocidad."
+  },
+  {
+    "name": "Recoome",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Miembro de las Fuerzas Especiales Ginyu de gran tamaño."
+  },
+  {
+    "name": "Guldo",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Miembro de las Fuerzas Especiales Ginyu con poderes psíquicos."
+  },
+  {
+    "name": "Cui",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Soldado de Freezer y rival de Vegeta."
+  },
+  {
+    "name": "Appule",
+    "series": "Dragon Ball Z",
+    "affiliation": "Fuerza de Freezer",
+    "description": "Soldado de Freezer presente en Namek."
+  },
+  {
+    "name": "Dende",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Joven namekiano que llega a convertirse en guardián de la Tierra."
+  },
+  {
+    "name": "Nail",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Guerrero namekiano que protege al Gran Anciano."
+  },
+  {
+    "name": "Gran Anciano",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Líder anciano de los namekianos durante la llegada de Freezer."
+  },
+  {
+    "name": "Moori",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Anciano namekiano que más tarde lidera a su pueblo."
+  },
+  {
+    "name": "Cargo",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Joven namekiano de la aldea de Dende."
+  },
+  {
+    "name": "Porunga",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Dragón invocado mediante las esferas de Namek."
+  },
+  {
+    "name": "Kaio del Norte",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Deidad que entrena a Goku en el más allá."
+  },
+  {
+    "name": "Rey Enma",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Juez que recibe a los muertos en el más allá."
+  },
+  {
+    "name": "Kaioshin",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Deidad suprema conocida también como Shin."
+  },
+  {
+    "name": "Kibito",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Asistente y protector de Kaioshin."
+  },
+  {
+    "name": "Anciano Kaioshin",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Antiguo Kaioshin liberado de la espada Z."
+  },
+  {
+    "name": "Gran Kaioshin",
+    "series": "Dragon Ball Z",
+    "affiliation": "Namek y deidades",
+    "description": "Deidad suprema absorbida por Majin Buu."
+  },
+  {
+    "name": "Cell",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Bioandroide creado a partir de células de varios guerreros."
+  },
+  {
+    "name": "Androide 19",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Androide que acompaña al Dr. Gero durante su ataque."
+  },
+  {
+    "name": "Majin Buu",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Ser mágico liberado por Babidi que presenta distintas formas."
+  },
+  {
+    "name": "Babidi",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Hechicero que busca despertar a Majin Buu."
+  },
+  {
+    "name": "Bibbidi",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Hechicero vinculado a Majin Buu y padre de Babidi."
+  },
+  {
+    "name": "Dabura",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Rey demonio que sirve a Babidi."
+  },
+  {
+    "name": "Pui Pui",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Guerrero al servicio de Babidi en su nave."
+  },
+  {
+    "name": "Yakon",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Monstruo al servicio de Babidi que absorbe luz."
+  },
+  {
+    "name": "Spopovich",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Luchador controlado por la magia de Babidi."
+  },
+  {
+    "name": "Yamu",
+    "series": "Dragon Ball Z",
+    "affiliation": "Enemigos de la Tierra",
+    "description": "Compañero de Spopovich bajo la influencia de Babidi."
+  },
+  {
+    "name": "Baby",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Enemigo creado con tecnología tsufur que busca vengarse de los saiyans."
+  },
+  {
+    "name": "Dr. Myuu",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Científico máquina vinculado a Baby en Dragon Ball GT."
+  },
+  {
+    "name": "General Rilldo",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Comandante del planeta M-2 al servicio del Dr. Myuu."
+  },
+  {
+    "name": "Giru",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Robot que acompaña a Goku, Pan y Trunks por el espacio."
+  },
+  {
+    "name": "Ledgic",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Mercenario que se enfrenta a Goku en el planeta Imecka."
+  },
+  {
+    "name": "Luud",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Deidad mecánica adorada por un culto en el espacio."
+  },
+  {
+    "name": "Nuova Shenron",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Dragón maligno asociado a la esfera de cuatro estrellas."
+  },
+  {
+    "name": "Eis Shenron",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Dragón maligno asociado a la esfera de tres estrellas."
+  },
+  {
+    "name": "Syn Shenron",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Dragón maligno asociado a la esfera de una estrella."
+  },
+  {
+    "name": "Haze Shenron",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Dragón maligno asociado a la esfera de dos estrellas."
+  },
+  {
+    "name": "Oceanus Shenron",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Dragón maligno asociado a la esfera de seis estrellas."
+  },
+  {
+    "name": "Rage Shenron",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Dragón maligno asociado a la esfera de cinco estrellas."
+  },
+  {
+    "name": "Naturon Shenron",
+    "series": "Dragon Ball GT",
+    "affiliation": "Dragon Ball GT",
+    "description": "Dragón maligno asociado a la esfera de siete estrellas."
+  },
+  {
+    "name": "Beerus",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Dios de la Destrucción del Universo 7."
+  },
+  {
+    "name": "Whis",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Ángel asistente y maestro de Beerus."
+  },
+  {
+    "name": "Champa",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Dios de la Destrucción del Universo 6 y hermano de Beerus."
+  },
+  {
+    "name": "Vados",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Ángel asistente de Champa."
+  },
+  {
+    "name": "Zeno",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Soberano que preside los universos."
+  },
+  {
+    "name": "Gran Sacerdote",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Ángel que sirve a Zeno y padre de varios ángeles."
+  },
+  {
+    "name": "Gowasu",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Kaioshin del Universo 10 y maestro de Zamasu."
+  },
+  {
+    "name": "Belmod",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Dios de la Destrucción del Universo 11."
+  },
+  {
+    "name": "Marcarita",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Ángel asistente del dios Belmod."
+  },
+  {
+    "name": "Quitela",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Dios de la Destrucción del Universo 4."
+  },
+  {
+    "name": "Sidra",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Dios de la Destrucción del Universo 9."
+  },
+  {
+    "name": "Roh",
+    "series": "Dragon Ball Super",
+    "affiliation": "Dioses y ángeles",
+    "description": "Kaioshin del Universo 9."
+  },
+  {
+    "name": "Hit",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Asesino del Universo 6 capaz de manipular brevemente el tiempo."
+  },
+  {
+    "name": "Cabba",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Joven saiyan del Universo 6 que conoce a Vegeta."
+  },
+  {
+    "name": "Caulifla",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Guerrera saiyan del Universo 6 y líder de una banda."
+  },
+  {
+    "name": "Kale",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Saiyan del Universo 6 y compañera de Caulifla."
+  },
+  {
+    "name": "Frost",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Guerrero del Universo 6 que participa en torneos entre universos."
+  },
+  {
+    "name": "Magetta",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Luchador metálico del equipo del Universo 6."
+  },
+  {
+    "name": "Botamo",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Luchador del Universo 6 con un cuerpo resistente."
+  },
+  {
+    "name": "Saonel",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Guerrero namekiano del equipo del Universo 6."
+  },
+  {
+    "name": "Pilina",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 6",
+    "description": "Guerrero namekiano del equipo del Universo 6."
+  },
+  {
+    "name": "Jiren",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 11",
+    "description": "Poderoso miembro de las Tropas del Orgullo."
+  },
+  {
+    "name": "Toppo",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 11",
+    "description": "Líder de las Tropas del Orgullo y candidato a dios de la destrucción."
+  },
+  {
+    "name": "Dyspo",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 11",
+    "description": "Veloz miembro de las Tropas del Orgullo."
+  },
+  {
+    "name": "Cocotte",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 11",
+    "description": "Integrante de las Tropas del Orgullo que lucha en el Torneo del Poder."
+  },
+  {
+    "name": "Kahseral",
+    "series": "Dragon Ball Super",
+    "affiliation": "Universo 11",
+    "description": "Miembro de las Tropas del Orgullo del Universo 11."
+  },
+  {
+    "name": "Ribrianne",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros universos",
+    "description": "Guerrera del Universo 2 que participa en el Torneo del Poder."
+  },
+  {
+    "name": "Kakunsa",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros universos",
+    "description": "Luchadora del Universo 2 y compañera de Ribrianne."
+  },
+  {
+    "name": "Rozie",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros universos",
+    "description": "Luchadora del Universo 2 y compañera de Ribrianne."
+  },
+  {
+    "name": "Bergamo",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros universos",
+    "description": "Guerrero lobo del Universo 9 y miembro del Trío del Peligro."
+  },
+  {
+    "name": "Lavender",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros universos",
+    "description": "Guerrero lobo del Universo 9 que utiliza veneno."
+  },
+  {
+    "name": "Basil",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros universos",
+    "description": "Guerrero lobo del Universo 9 especializado en patadas."
+  },
+  {
+    "name": "Obni",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros universos",
+    "description": "Luchador del Universo 10 que participa en el Torneo del Poder."
+  },
+  {
+    "name": "Zamasu",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Aprendiz de Kaioshin del Universo 10 que desprecia a los mortales."
+  },
+  {
+    "name": "Goku Black",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Zamasu en el cuerpo de Goku en una línea temporal alternativa."
+  },
+  {
+    "name": "Jaco",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Patrullero galáctico que conoce a Bulma y a sus amigos."
+  },
+  {
+    "name": "Monaka",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Repartidor reclutado por Beerus para el torneo contra el Universo 6."
+  },
+  {
+    "name": "Moro",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Hechicero devorador de energía que amenaza la galaxia en el manga."
+  },
+  {
+    "name": "Merus",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Patrullero galáctico que entrena a Goku durante la crisis de Moro."
+  },
+  {
+    "name": "Granolah",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Cazarrecompensas cerealiano que busca vengar a su pueblo."
+  },
+  {
+    "name": "Monaito",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Anciano namekiano que cuidó de Granolah."
+  },
+  {
+    "name": "Gas",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Miembro de la familia Heeter que se enfrenta a Granolah y los saiyans."
+  },
+  {
+    "name": "Elec",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Líder de los Heeter y hermano de Gas."
+  },
+  {
+    "name": "Oil",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Miembro de la familia Heeter."
+  },
+  {
+    "name": "Maki",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Miembro de la familia Heeter."
+  },
+  {
+    "name": "Broly",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Saiyan criado en el planeta Vampa que aparece en Dragon Ball Super: Broly."
+  },
+  {
+    "name": "Cheelai",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Integrante de la fuerza de Freezer que ayuda a Broly."
+  },
+  {
+    "name": "Lemo",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Veterano de la fuerza de Freezer que se hace amigo de Broly."
+  },
+  {
+    "name": "Paragus",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Padre de Broly en Dragon Ball Super: Broly."
+  },
+  {
+    "name": "Dr. Hedo",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Científico que crea a Gamma 1 y Gamma 2."
+  },
+  {
+    "name": "Gamma 1",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Androide creado por el Dr. Hedo en Super Hero."
+  },
+  {
+    "name": "Gamma 2",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Androide creado por el Dr. Hedo en Super Hero."
+  },
+  {
+    "name": "Magenta",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Dirigente de la nueva organización Red Ribbon en Super Hero."
+  },
+  {
+    "name": "Carmine",
+    "series": "Dragon Ball Super",
+    "affiliation": "Otros personajes",
+    "description": "Asistente de Magenta en Super Hero."
+  },
+  {
+    "name": "Glorio",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Habitante del Reino Demoníaco que guía a Goku y sus compañeros."
+  },
+  {
+    "name": "Panzy",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Princesa del Tercer Mundo Demoníaco que acompaña al grupo de Goku."
+  },
+  {
+    "name": "Gomah",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Rey demonio que usa las esferas terrestres para rejuvenecer a sus enemigos."
+  },
+  {
+    "name": "Degesu",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Hermano de Shin y asistente de Gomah."
+  },
+  {
+    "name": "Dra. Arinsu",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Científica del Reino Demoníaco y hermana de Shin."
+  },
+  {
+    "name": "Neva",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Anciano namekiano vinculado a las esferas del Reino Demoníaco."
+  },
+  {
+    "name": "Hybis",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Habitante del Reino Demoníaco que ayuda al grupo de Goku."
+  },
+  {
+    "name": "Marba",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Bruja del Reino Demoníaco que crea nuevos majin para Arinsu."
+  },
+  {
+    "name": "Majin Kuu",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Majin creado por Marba para los planes de Arinsu."
+  },
+  {
+    "name": "Majin Duu",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Majin creado por Marba y compañero de Majin Kuu."
+  },
+  {
+    "name": "Rey Kadan",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Gobernante del Tercer Mundo Demoníaco y padre de Panzy."
+  },
+  {
+    "name": "Tamagami Número Uno",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Guardián de una esfera del dragón del Reino Demoníaco."
+  },
+  {
+    "name": "Tamagami Número Dos",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Guardián de una esfera del dragón del Reino Demoníaco."
+  },
+  {
+    "name": "Tamagami Número Tres",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Guardián de una esfera del dragón del Reino Demoníaco."
+  },
+  {
+    "name": "Sir Warp",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Ser que transporta viajeros entre los mundos demoníacos."
+  },
+  {
+    "name": "Kadem",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Miembro de las fuerzas especiales de Gomah."
+  },
+  {
+    "name": "Danima",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Miembro de las fuerzas especiales de Gomah."
+  },
+  {
+    "name": "Hillia",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Miembro de las fuerzas especiales de Gomah."
+  },
+  {
+    "name": "Mashim",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Miembro de las fuerzas especiales de Gomah."
+  },
+  {
+    "name": "Gaimoi",
+    "series": "Dragon Ball Daima",
+    "affiliation": "Reino Demoníaco",
+    "description": "Miembro de las fuerzas especiales de Gomah."
+  },
+  {
+    "name": "Garlic Jr.",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Enemigo que busca las esferas del dragón en Dead Zone."
+  },
+  {
+    "name": "Dr. Wheelo",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Científico cuyo cerebro sobrevive en una máquina en The World's Strongest."
+  },
+  {
+    "name": "Dr. Kochin",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Científico que ayuda al Dr. Wheelo en The World's Strongest."
+  },
+  {
+    "name": "Turles",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Saiyan que amenaza la Tierra en The Tree of Might."
+  },
+  {
+    "name": "Lord Slug",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Namekiano que invade la Tierra en la película que lleva su nombre."
+  },
+  {
+    "name": "Cooler",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Hermano de Freezer y antagonista de películas de Dragon Ball Z."
+  },
+  {
+    "name": "Salza",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Guerrero de las fuerzas de Cooler."
+  },
+  {
+    "name": "Androide 13",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Androide que aparece en Super Android 13!."
+  },
+  {
+    "name": "Androide 14",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Androide que acompaña al Androide 13."
+  },
+  {
+    "name": "Androide 15",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Androide que acompaña al Androide 13."
+  },
+  {
+    "name": "Broly (películas Z)",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Guerrero saiyan de las películas clásicas de Dragon Ball Z."
+  },
+  {
+    "name": "Paragus (películas Z)",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Padre de Broly en las películas clásicas de Dragon Ball Z."
+  },
+  {
+    "name": "Bojack",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Pirata espacial que irrumpe en un torneo de artes marciales."
+  },
+  {
+    "name": "Zangya",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Guerrera de la banda de Bojack."
+  },
+  {
+    "name": "Janemba",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Demonio nacido en el más allá en Fusion Reborn."
+  },
+  {
+    "name": "Tapion",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Guerrero que lleva encerrado al monstruo Hirudegarn."
+  },
+  {
+    "name": "Hirudegarn",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Monstruo gigante que amenaza la Tierra en Wrath of the Dragon."
+  },
+  {
+    "name": "Dr. Raichi",
+    "series": "Películas",
+    "affiliation": "Películas de Dragon Ball Z",
+    "description": "Científico tsufur que aparece en el especial Plan to Eradicate the Saiyans."
+  }
+]
