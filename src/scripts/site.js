@@ -29,6 +29,14 @@ quizForm?.addEventListener('submit', (event) => {
 
 const dragonBallTriggers = [...document.querySelectorAll('[data-dragon-ball]')];
 const originalBallLabels = dragonBallTriggers.map((trigger) => trigger.getAttribute('aria-label'));
+// Randomize only within reserved, in-flow space; layout changes need no JS.
+function randomizeBallSlots() {
+  dragonBallTriggers.forEach((ball) => {
+    if (ball === document.activeElement) return;
+    ball.parentElement?.style.setProperty('--ball-position', Math.random());
+  });
+}
+randomizeBallSlots();
 const dragonBallToast = document.querySelector('#dragon-ball-toast');
 const shenronDialog = document.querySelector('#shenron-scene');
 const shenlongController = createShenlongController(() => import('./shenlong-scene.js'));
@@ -171,6 +179,7 @@ function resetWish() {
     trigger.setAttribute('aria-pressed', 'false');
     trigger.setAttribute('aria-label', originalBallLabels[index]);
   });
+  randomizeBallSlots();
   announceHunt('¡Deseo concedido! Las esferas se han dispersado por el universo.');
 }
 

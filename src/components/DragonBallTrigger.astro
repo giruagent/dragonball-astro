@@ -5,6 +5,7 @@ const { number, placement } = Astro.props;
 const stars = starLayouts[number - 1] ?? [];
 ---
 
+<div class="ball-slot">
 <button
   class={`dragon-ball-trigger ${placement}`}
   type="button"
@@ -16,3 +17,4 @@ const stars = starLayouts[number - 1] ?? [];
     {stars.map(([x, y]) => <span class="dragon-ball-star" style={`--star-x:${x}%;--star-y:${y}%`}>★</span>)}
   </span>
 </button>
+</div>
