@@ -766,6 +766,36 @@ button:focus-visible,a:focus-visible,input:focus-visible+span,select:focus-visib
   background:#1f4335
 }
 
+.shenron-sound {
+  position:absolute;
+  z-index:10;
+  top:1rem;
+  left:1rem;
+  min-height:42px;
+  padding:.55rem .85rem;
+  border:1px solid #b9e7b966;
+  border-radius:999px;
+  background:#07100fe8;
+  color:#e5f4d2;
+  font:700 .8rem var(--body, sans-serif);
+  cursor:pointer
+}
+
+.shenron-sound:hover,.shenron-sound[aria-pressed="true"] { background:#24543c }
+.shenron-sound:focus-visible { outline:3px solid #ffe19a; outline-offset:3px }
+
+/* The illustrated fallback shares the long summoning beat of the 3D scene. */
+.shenron-scene[open]:not(.is-fulfilling) .shenron-stage:not(.has-3d-dragon) .shenron-dragon {
+  animation:dragon-emerge 4.8s cubic-bezier(.16,1,.3,1) both
+}
+
+@keyframes dragon-emerge {
+  0% { opacity:0; transform:translateY(18%) scale(.66) rotate(-8deg); filter:blur(12px) brightness(2) }
+  30% { opacity:.4; filter:blur(5px) brightness(1.6) }
+  68% { opacity:1; transform:translateY(-2%) scale(1.04) rotate(2deg); filter:blur(0) brightness(1.15) drop-shadow(0 0 28px #61e7aa99) }
+  100% { opacity:1; transform:translateY(0) scale(1) rotate(0); filter:drop-shadow(0 0 22px #61e7aa77) }
+}
+
 .shenron-stage {
   position:relative;
   display:grid;
